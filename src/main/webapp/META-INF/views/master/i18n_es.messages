@@ -1,0 +1,147 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+# master.banner.welcome #######################################################
+
+master.banner.background = #EFE4B0 
+
+﻿# master.welcome ##############################################################
+
+master.welcome.title = ¡Bienvenidos!
+master.welcome.text = \
+	Bienvenidos a Acme Jobs! No volveras a preocuparte por tener que buscar sin\
+	exito trabajo o nuevos empleados. ¡Empieza a ganar dinero!
+
+# master.menu #################################################################
+
+master.menu.home = Inicio
+master.menu.sign-up = Registrarse
+master.menu.sign-in = Entrar
+master.menu.sign-out = Salir
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anónimo
+
+master.menu.anonymous.announcement.list = Lista de anuncios
+master.menu.anonymous.company-record.list = Lista de registros de la compañia
+master.menu.anonymous.company-record.five-stars = Mejores registros de la compañia
+master.menu.anonymous.investor-record.list = Lista de registros de inversores
+master.menu.anonymous.investor-record.five-stars = Mejores registros de inversor
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autenticado
+
+master.menu.authenticated.announcement.list = Lista de anuncios
+master.menu.authenticated.offer.list = Lista de ofertas
+master.menu.authenticated.request.list = Lista de solicitudes
+master.menu.authenticated.challenge.list = Lista de desafios
+master.menu.authenticated.investor-record.list = Lista de registros de inversores
+master.menu.authenticated.company-record.list = Lista de registros de la compañia
+master.menu.authenticated.job.list = Lista de trabajos
+
+master.menu.authenticated,messageThread.list = Mis conversaciones
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrador
+master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.shutdown = Parar el sistema
+
+master.menu.administrator.announcement.list = Lista de anuncios
+master.menu.administrator.announcement.create = Crear anuncio
+master.menu.administrator.commercial-banner.create = Crear un banner comercial
+master.menu.administrator.commercial-banner.list = Lista de banners comerciales
+master.menu.administrator.non-commercial-banner.create = Crear un banner no comercial
+master.menu.administrator.non-commercial-banner.list = Lista de banners no comerciales
+master.menu.administrator.investor-record.create = Crear registro de inversor
+master.menu.administrator.company-record.create = Crear registro de compania
+master.menu.administrator.challenge.create = Crear desafio
+
+master.menu.administrator.dashboard.show = Mostrar tablon de datos
+master.menu.administrator.customization-parameter = Parametros de customizacion
+
+# master.menu.provider ########################################################
+
+master.menu.provider = Proveedor
+master.menu.provider.request.create = Crear solicitud
+
+# master.menu.consumer ##########################################################
+
+master.menu.consumer = Consumidor
+master.menu.consumer.offer.create= Crear oferta
+
+# master.menu.worker ##########################################################
+
+master.menu.worker = Worker
+master.menu.worker.application.list= Lista de solicitudes
+
+# master.menu.employer ########################################################
+
+master.menu.employer = Empleador
+master.menu.employer.job.list= Lista de trabajos
+master.menu.employer.application.list= Lista de solicitudes
+
+# master.menu.auditor ########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.job.list = Lista de trabajos que poseen un registro de auditoria
+master.menu.auditor.job.list-not-written = Lista de trabajos que no poseen un registro de auditoria
+
+# master.menu.sponsor ########################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.banner.list = Mis anuncios publicitarios
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Cuenta
+master.menu.user-account.general-data = Datos generales
+master.menu.user-account.provider = Datos de proveedor
+master.menu.user-account.become-provider = Hazte proveedor
+master.menu.user-account.consumer = Datos de consumidor
+master.menu.user-account.become-consumer = Hazte consumidor
+
+﻿# master.footer ###############################################################
+
+master.footer.title.about = Nosotros
+master.footer.label.company = La empresa
+master.footer.label.license = Licencia
+master.footer.title.social = Social
+master.footer.label.linked-in = Linked-In
+master.footer.label.twitter = Twitter
+master.footer.title.languages = Idioma
+master.footer.label.english = Inglés
+master.footer.label.spanish = Español
+
+# master.company ##############################################################
+
+master.company.title = La compañía
+master.company.text = \
+	Acme Jobs, Inc. es una compañía fictícia que proporciona un proyecto \
+	plantilla para los estudiantes de la asignatura Diseño y Pruebas, en el Grado \
+	en Ingeniería del Software de la Universidad de Sevilla.
+master.company.name = Acme Jobs, Inc.
+master.company.address = Calle, número, Ciudad, Estado, País
+master.company.phone = +000 123 456
+master.company.email = contact@acme.com
+
+# master.license ##############################################################
+
+master.license.title = Licencia
+master.license.text = \
+	Puede usar este sistema de forma completamente gratuita respetando las leyes \
+	que sean aplicables.  No compartimos ninguna información sobre Ud. con ninguna \
+	otra empresa.  Tan sólo usamos tres cookies, a saber: "JSESSIONID" para identificar \
+	su sesión de trabajo, "remember" para mantener su información de autentificación \
+	durante un máximo de 31 días y "language" para almacenar sus preferencias de \
+	lenguage.  Además, almacenamos un ítem llamado "returnStack" en el almacenamiento \
+	local de su navegador para saber dónde tienen que ir algunos botones.

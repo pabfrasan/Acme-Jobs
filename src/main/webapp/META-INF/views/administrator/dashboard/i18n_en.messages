@@ -1,0 +1,38 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+#Dashboard SHOW
+
+administrator.dashboard.form.label.totalAnnouncement = Total of Announcements
+administrator.dashboard.form.label.totalCompanyRecord = Total of Company records
+administrator.dashboard.form.label.totalInvestorRecords = Total of Investor records
+
+administrator.dashboard.form.label.minRewardsSolicit = Min reward of Solicit
+administrator.dashboard.form.label.maxRewardsSolicit = Max reward of Solicit
+administrator.dashboard.form.label.avgRewardsSolicit = Average reward of Solicit
+administrator.dashboard.form.label.stdRewardsSolicit = Standart deviation reward of Solicit
+
+administrator.dashboard.form.label.minRewardsOffer = Min reward of Offer
+administrator.dashboard.form.label.maxRewardsOffer = Max reward of Offer
+administrator.dashboard.form.label.avgRewardsOffer = Average reward of Offer
+administrator.dashboard.form.label.stdRewardsOffer = Standart deviation reward of Offer
+
+administrator.dashboard.form.label.avgJobsEmployer = Average number of jobs per employer
+administrator.dashboard.form.label.avgApplicationsEmployer = Average number of applications per employer
+administrator.dashboard.form.label.avgApplicationsWorker = Average number of applications per worker
+
+administrator.dashboard.form.label.chart.company = Company Status
+administrator.dashboard.form.label.chart.investor = Investor Status
+
+administrator.dashboard.form.label.chart.jobsByStatus = Ratio of jobs grouped by status
+administrator.dashboard.form.label.chart.applicationsByStatus = Ratio of applications grouped by status
+
+administrator.dashboard.form.button.return = Return

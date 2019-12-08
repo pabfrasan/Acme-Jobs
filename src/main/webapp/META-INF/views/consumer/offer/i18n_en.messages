@@ -1,0 +1,33 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+#OFFER FORM
+
+consumer.offer.form.label.title = Title
+consumer.offer.form.label.moment = Moment
+consumer.offer.form.label.rango = Range of money
+consumer.offer.form.label.text = Text
+consumer.offer.form.label.ticker = Ticker
+consumer.offer.form.label.deadline= Deadline
+consumer.offer.form.button.return = Return
+consumer.offer.form.error.too-close = The deadline must be future
+consumer.offer.form.error.duplicate = The ticket is duplicated
+consumer.offer.form.error.currency= The currency must be EUR or €
+consumer.offer.form.label.accept= Accept
+consumer.offer.form.button.create = Create
+consumer.offer.form.label.maxMoney = Max money
+consumer.offer.form.label.minMoney = Min money
+consumer.offer.form.error.must-accept = Must accept
+consumer.offer.form.error.min.amount = The minimum cannot be greater than the maximum
+consumer.offer.form.error.max.amount = The maximum cannot be less than the minimum
+
+
+

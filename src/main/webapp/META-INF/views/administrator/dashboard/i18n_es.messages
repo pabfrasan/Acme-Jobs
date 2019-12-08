@@ -1,0 +1,38 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+#Dashboard SHOW
+
+administrator.dashboard.form.label.totalAnnouncement = Total de anuncios
+administrator.dashboard.form.label.totalCompanyRecord = Total de registros de compañias
+administrator.dashboard.form.label.totalInvestorRecords = Total de registros de inversiones
+
+administrator.dashboard.form.label.minRewardsSolicit = Recompensa minima de las solicitudes
+administrator.dashboard.form.label.maxRewardsSolicit = Recompensa maxima de las solicitudes
+administrator.dashboard.form.label.avgRewardsSolicit = Recompensa media de las solicitudes
+administrator.dashboard.form.label.stdRewardsSolicit = Desviacion estandar de recompensas de las solicitudes
+
+administrator.dashboard.form.label.minRewardsOffer = Recompensa minima de las ofertas
+administrator.dashboard.form.label.maxRewardsOffer = Recompensa maxima de las ofertas
+administrator.dashboard.form.label.avgRewardsOffer = Recompensa media de las ofertas
+administrator.dashboard.form.label.stdRewardsOffer = Desviacion estandar de recompensas de las ofertas
+
+administrator.dashboard.form.label.avgJobsEmployer = Media de trabajos por empleador
+administrator.dashboard.form.label.avgApplicationsEmployer = Media de solicitudes por empleador
+administrator.dashboard.form.label.avgApplicationsWorker = Media de solicitudes por trabajador
+
+administrator.dashboard.form.label.chart.company = Estado de los registros de las compañias
+administrator.dashboard.form.label.chart.investor = Estado de los registros de los inversores
+
+administrator.dashboard.form.label.chart.jobsByStatus = Ratio de trabajos por estado
+administrator.dashboard.form.label.chart.applicationsByStatus = Ratio de solicitudes por estado
+
+administrator.dashboard.form.button.return = Volver

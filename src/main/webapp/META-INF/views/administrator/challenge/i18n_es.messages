@@ -1,0 +1,35 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#CHALLENGE LIST
+
+administrator.challenge.list.label.title = Titulo
+administrator.challenge.list.label.deadline = Fecha límite
+administrator.challenge.list.label.rewardGold = Recompensa de oro
+
+#CHALLENGE FORM
+
+administrator.challenge.form.label.rewardGold = Recompensa de oro
+administrator.challenge.form.label.description = Descripcion
+administrator.challenge.form.label.rewardSilver = Recompensa de plata
+administrator.challenge.form.label.rewardBronze = Recompensa de bronce
+administrator.challenge.form.label.title = Titulo
+administrator.challenge.form.label.deadline = Fecha límite
+
+administrator.challenge.form.button.create = Crear
+administrator.challenge.form.button.update = Actualizar
+administrator.challenge.form.button.delete = Borrar
+administrator.challenge.form.button.return = Volver
+
+#CHALLENGE ERRORS
+
+administrator.challenge.error.deadline.esFuturo = La fecha limite debe ser futura
+administrator.challenge.error.rewardGold.esMayor = La recompensa de oro deberia de ser mayor que la de plata
+administrator.challenge.error.rewardSilver.esMayor = La recompensa de plata deberia de ser mayor que la de bronce
