@@ -8,12 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.consumer.consumer.form.title.create = Hazte trabajador
-authenticated.consumer.consumer.form.title.update = Actualiza tus datos de trabajador
+authenticated.employer.form.title.create = Hazte empleador
+authenticated.employer.form.title.update = Actualiza tus datos de empleador
 
-authenticated.consumer.consumer.form.label.company = Compañía
-authenticated.consumer.consumer.form.label.sector = Sector
+authenticated.employer.form.label.company = Compañía
+authenticated.employer.form.label.sector = Sector
 
-authenticated.consumer.consumer.form.button.create = Registrar
-authenticated.consumer.consumer.form.button.update = Actualizar
-authenticated.consumer.consumer.form.button.return = Volver
+authenticated.employer.form.button.create = Registrar
+authenticated.employer.form.button.update = Actualizar
+authenticated.employer.form.return = Volver

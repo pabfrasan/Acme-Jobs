@@ -48,7 +48,7 @@ master.menu.authenticated.investor-record.list = Lista de registros de inversore
 master.menu.authenticated.company-record.list = Lista de registros de la compañia
 master.menu.authenticated.job.list = Lista de trabajos
 
-master.menu.authenticated,messageThread.list = Mis conversaciones
+master.menu.authenticated.messageThread.list = Mis conversaciones
 
 # master.menu.administrator ###################################################
 
@@ -81,7 +81,7 @@ master.menu.consumer.offer.create= Crear oferta
 
 # master.menu.worker ##########################################################
 
-master.menu.worker = Worker
+master.menu.worker = Trabajador
 master.menu.worker.application.list= Lista de solicitudes
 
 # master.menu.employer ########################################################
@@ -109,6 +109,10 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.worker = Datos del trabajador
+master.menu.user-account.become-worker = Hazte trabajador
+master.menu.user-account.employer = Datos del empleador
+master.menu.user-account.become-employer = Hazte empleador
 
 ﻿# master.footer ###############################################################
 
