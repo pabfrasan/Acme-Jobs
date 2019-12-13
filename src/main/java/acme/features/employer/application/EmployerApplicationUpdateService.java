@@ -4,16 +4,17 @@ package acme.features.employer.application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.StatusApplication;
 import acme.entities.applications.Application;
 import acme.entities.roles.Employer;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class EmployerApplicationShowService implements AbstractShowService<Employer, Application> {
-	// Internal state ---------------------------------------------------------
+public class EmployerApplicationUpdateService implements AbstractUpdateService<Employer, Application> {
 
 	@Autowired
 	EmployerApplicationRepository repository;
@@ -39,6 +40,15 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 	}
 
 	@Override
+	public void bind(final Request<Application> request, final Application entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors);
+	}
+
+	@Override
 	public void unbind(final Request<Application> request, final Application entity, final Model model) {
 		assert request != null;
 		assert entity != null;
@@ -60,4 +70,25 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 
 		return result;
 	}
+
+	@Override
+	public void validate(final Request<Application> request, final Application entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		if (entity.getStatus() != null && entity.getStatus() == StatusApplication.REJECTED) {
+			boolean rejected = entity.getJustification() == null || !entity.getJustification().matches("[a-zA-Z]"); // Si es REJECTED es necesario que tenga una jjustificación no vacía.
+			errors.state(request, !rejected, "justification", "employer.application.error.justification.rejected");
+		}
+	}
+
+	@Override
+	public void update(final Request<Application> request, final Application entity) {
+		assert request != null;
+		assert entity != null;
+
+		this.repository.save(entity);
+	}
+
 }
