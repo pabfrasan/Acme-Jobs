@@ -89,6 +89,7 @@ master.menu.worker.application.list= Lista de solicitudes
 master.menu.employer = Empleador
 master.menu.employer.job.list= Lista de trabajos
 master.menu.employer.application.list= Lista de solicitudes
+master.menu.employer.job.create = Crear un trabajo
 
 # master.menu.auditor ########################################################
 

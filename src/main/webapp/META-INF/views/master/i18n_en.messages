@@ -89,6 +89,7 @@ master.menu.worker.application.list= List applications
 master.menu.employer = Employer
 master.menu.employer.job.list= List jobs
 master.menu.employer.application.list= List applications
+master.menu.employer.job.create = Create job
 
 # master.menu.auditor ########################################################
 

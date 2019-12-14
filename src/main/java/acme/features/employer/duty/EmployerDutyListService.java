@@ -42,11 +42,11 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 	public Collection<Duty> findMany(final Request<Duty> request) {
 		assert request != null;
 
-		//		int idDescriptor = request.getModel().getInteger("idDescriptor");
-
 		Collection<Duty> result;
-		result = this.repository.findManyAll();
-		//result = this.repository.findMany(idDescriptor);
+		int id;
+
+		id = new Integer(request.getServletRequest().getParameter("id"));
+		result = this.repository.findManyByDescriptorId(id);
 
 		return result;
 	}
