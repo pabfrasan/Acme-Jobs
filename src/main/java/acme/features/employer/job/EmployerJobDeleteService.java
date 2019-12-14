@@ -59,9 +59,8 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		//Collection<Application> applications = this.repository.findApplicationsByJobId(entity.getId());
 
 		//boolean isEmpty = applications.isEmpty();
-		if (true) {
-			errors.state(request, false, "status", "employer.job.error.status.esFinal");
-		}
+		errors.state(request, false, "status", "employer.job.error.status.esFinal");
+
 	}
 
 	@Override

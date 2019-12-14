@@ -19,5 +19,6 @@
 	<acme:form-textarea code="employer.descriptor.form.label.description" path="description"/>
 	
 	<acme:form-submit test="${command == 'show' }" code="employer.duty.button.list" method="get" action="/employer/duty/list?id=${id}"/>
+	<acme:form-submit test="${command == 'create' }" code="employer.descriptor.form.button.create" action="/employer/descriptor/create/"/>
 	<acme:form-return code="employer.descriptor.form.button.return"/>
 </acme:form>

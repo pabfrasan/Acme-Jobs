@@ -14,6 +14,8 @@
 employer.duty.form.label.title = Title
 employer.duty.form.label.description = Description
 employer.duty.form.label.percentage = Percentage
+employer.duty.form.label.descriptor = Descriptor
+employer.duty.form.button.create = Create
 employer.duty.form.button.return= Return
 
 
