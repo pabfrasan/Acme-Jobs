@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.applications.Application;
 import acme.entities.auditRecords.AuditRecord;
+import acme.entities.customizationParameters.CustomizationParameter;
 import acme.entities.descriptors.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
@@ -33,4 +34,10 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select d from Descriptor d")
 	Collection<Descriptor> findAllDescriptors();
+
+	@Query("select d from Descriptor d where d.id = ?1")
+	Descriptor findDescriptorById(int id);
+
+	@Query("select c from CustomizationParameter c")
+	Collection<CustomizationParameter> findAllCustomizationParameter();
 }

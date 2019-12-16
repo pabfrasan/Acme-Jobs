@@ -21,9 +21,9 @@
 	<acme:form-integer code="employer.duty.form.label.percentage" path="percentage"/>
 	
 	<jstl:if test="${command == 'create' }">
-		<acme:form-select code="employer.duty.form.label.descriptor" path="descriptor">
+		<acme:form-select code="employer.duty.form.label.idDescriptor" path="idDescriptor">
 			<jstl:forEach items="${descriptors}" var="descriptor">
-				<acme:form-option code="${descriptor.getDescription()}" value="${descriptor}"/>
+				<acme:form-option code="${descriptor.getDescription()}" value="${descriptor.getId()}"/>
 			</jstl:forEach>
 		</acme:form-select>
 	</jstl:if>

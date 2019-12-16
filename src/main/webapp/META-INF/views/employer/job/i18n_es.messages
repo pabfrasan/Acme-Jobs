@@ -22,7 +22,7 @@ employer.job.form.label.deadline = Fecha límite
 employer.job.form.label.salary = Salario
 employer.job.form.label.moreInfo = Más informacion
 employer.job.form.label.title = Titulo
-employer.job.form.label.descriptor = Descriptor
+employer.job.form.label.idDescriptor = Descriptor
 
 employer.auditRecord.button.list = Listar registros de auditorias de este trabajo
 employer.descriptor.button.show = Descriptor de este trabajo
@@ -35,3 +35,5 @@ employer.job.form.button.return = Volver
 #JOB ERRORS
 employer.job.error.status.esFinal = El trabajo no puede estar en su fase final
 employer.job.error.status.isEmpty = No se puede borrar un trabajo para el que un trabajador ha realizado una solicitud
+employer.job.error.status.sum100 = El trabajo no puede estar en su fase final si la suma de los porcentajes de los deberes de su descriptor no es igual a 100%
+employer.job.error.status.spam = Uno de los deberes posee unas palabras que no estan permitidas

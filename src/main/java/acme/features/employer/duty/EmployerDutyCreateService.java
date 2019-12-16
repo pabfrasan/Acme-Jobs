@@ -36,7 +36,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "descriptor");
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "description", "percentage", "descriptor");
+		request.unbind(entity, model, "title", "description", "percentage");
 		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
 		model.setAttribute("descriptors", descriptors);
 	}
@@ -72,6 +72,10 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert request != null;
 		assert entity != null;
 
+		String stringId = (String) request.getModel().getAttribute("idDescriptor");
+		int id = Integer.parseInt(stringId);
+		Descriptor descriptor = this.repository.findDescriptorById(id);
+		entity.setDescriptor(descriptor);
 		this.repository.save(entity);
 	}
 

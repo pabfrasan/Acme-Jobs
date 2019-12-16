@@ -56,10 +56,10 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		//Collection<Application> applications = this.repository.findApplicationsByJobId(entity.getId());
+		Collection<Application> applications = this.repository.findApplicationsByJobId(entity.getId());
 
-		//boolean isEmpty = applications.isEmpty();
-		errors.state(request, false, "status", "employer.job.error.status.esFinal");
+		boolean isEmpty = applications.isEmpty();
+		errors.state(request, !isEmpty, "status", "employer.job.error.status.esFinal");
 
 	}
 

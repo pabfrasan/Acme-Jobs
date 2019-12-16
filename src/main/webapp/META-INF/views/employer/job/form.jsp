@@ -22,12 +22,12 @@
 	<acme:form-moment code="employer.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-textarea code="employer.job.form.label.status" path="status" placeholder="DRAFT / PUBLISHER"/>
+	<acme:form-textarea code="employer.job.form.label.status" path="status" placeholder="DRAFT / PUBLISHED"/>
 	
 	<jstl:if test="${command == 'create' }">
-		<acme:form-select code="employer.job.form.label.descriptor" path="descriptor">
+		<acme:form-select code="employer.job.form.label.idDescriptor" path="idDescriptor">
 			<jstl:forEach items="${descriptors}" var="descriptor">
-				<acme:form-option code="${descriptor.getDescription()}" value="${descriptor}"/>
+				<acme:form-option code="${descriptor.getDescription()}" value="${descriptor.getId()}"/>
 			</jstl:forEach>
 		</acme:form-select>
 	</jstl:if>
