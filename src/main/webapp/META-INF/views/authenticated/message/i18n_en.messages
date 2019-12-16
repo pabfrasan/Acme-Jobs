@@ -26,3 +26,5 @@ authenticated.message.form.label.accept = The message cannot be updated or delet
 
 administrator.message.form.button.create = Send message
 authenticated.message-thread.form.button.return = Return
+
+authenticated.message.error.must-accept = You must accept before to send the message

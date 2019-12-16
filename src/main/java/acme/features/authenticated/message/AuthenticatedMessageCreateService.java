@@ -86,6 +86,10 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert entity != null;
 		assert errors != null;
 
+		boolean isAccepted;
+
+		isAccepted = request.getModel().getBoolean("accept");
+		errors.state(request, isAccepted, "accept", "authenticated.message.error.must-accept");
 	}
 
 	@Override

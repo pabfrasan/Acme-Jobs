@@ -26,3 +26,5 @@ authenticated.message.form.label.accept = El mensaje no puede ser editado o borr
 
 administrator.message.form.button.create = Enviar mensaje
 authenticated.message-thread.form.button.return = Volver
+
+authenticated.message.error.must-accept = Debes aceptar antes de enviar el mensaje
