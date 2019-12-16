@@ -13,6 +13,7 @@ import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -49,16 +50,43 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "statement", "skills", "qualifications");
+		/*
+		 * if (request.isMethod(HttpMethod.GET)) {
+		 * Integer JobId = new Integer(request.getServletRequest().getParameter("JobId"));
+		 * 
+		 * // model.setAttribute("accept", "false");
+		 * model.setAttribute("JobId", JobId);
+		 * } else {
+		 * request.transfer(model, "pending");
+		 * }
+		 */
 	}
 
 	@Override
 	public Application instantiate(final Request<Application> request) {
 		assert request != null;
+
 		Application result;
 
+		Date moment;
+		moment = new Date(System.currentTimeMillis() - 1);
+
+		Principal principal = request.getPrincipal();
+		int workerId = principal.getAccountId();
+		Worker worker = this.repository.findWorkerById(workerId);
+
+		int JobId = request.getModel().getInteger("JobId");
+		Job job = this.repository.findOneJobById(JobId);
+
 		result = new Application();
+		result.setMoment(moment);
+		StatusApplication status = StatusApplication.PENDING;
+		result.setStatus(status);
+		result.setWorker(worker);
+		result.setJob(job);
 
 		return result;
+
 	}
 
 	@Override
@@ -78,22 +106,27 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		entity.setMoment(moment);
 
-		int id;
-		id = new Integer(request.getServletRequest().getParameter("id"));
+		/*
+		 * int id;
+		 * id = new Integer(request.getServletRequest().getParameter("id"));
+		 */
+		/*
+		 * int idA;
+		 * idA = request.getPrincipal().getActiveRoleId();
+		 * /*
+		 * Job job = this.repository.findOneJobById(id);
+		 * entity.setJob(job);
+		 */
+		Job j;
 
-		int idA;
-		idA = request.getPrincipal().getActiveRoleId();
+		int JobId = request.getModel().getInteger("JobId");
+		j = this.repository.findOneJobById(JobId);
 
-		StatusApplication status = StatusApplication.PENDING;
-		entity.setStatus(status);
+		/*
+		 * Worker worker = this.repository.findWorkerById(idA);
+		 * entity.setWorker(worker);
+		 */
 
-		Job job = this.repository.findOneJobById(id);
-		entity.setJob(job);
-
-		Worker worker = this.repository.findWorkerById(idA);
-		entity.setWorker(worker);
-
-		entity.setJustification("");
 		this.repository.save(entity);
 	}
 
