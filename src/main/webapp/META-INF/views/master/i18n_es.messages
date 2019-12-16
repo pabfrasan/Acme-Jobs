@@ -69,6 +69,8 @@ master.menu.administrator.challenge.create = Crear desafio
 master.menu.administrator.dashboard.show = Mostrar tablon de datos
 master.menu.administrator.customization-parameter = Parametros de customizacion
 
+master.menu.administrator.auditor-request.list= Solicitud para ser un auditor
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
@@ -113,6 +115,8 @@ master.menu.user-account.worker = Datos del trabajador
 master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.employer = Datos del empleador
 master.menu.user-account.become-employer = Hazte empleador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor = Datos de auditor
 
 ﻿# master.footer ###############################################################
 
