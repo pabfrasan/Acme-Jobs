@@ -10,15 +10,15 @@
 
 # LIST
 
-authenticated.message-thread.list.label.title = Titulo
-authenticated.message-thread.list.label.moment = Momento
+authenticated.message.list.label.title = Titulo
+authenticated.message.list.label.moment = Momento
 authenticated.message.list.label.tags = Etiquetas
 authenticated.message.list.label.body = Cuerpo
 
 # FORM
 
-authenticated.message-thread.form.label.title = Titulo
-authenticated.message-thread.form.label.moment = Momento
+authenticated.message.form.label.title = Titulo
+authenticated.message.form.label.moment = Momento
 authenticated.message.form.label.tags = Etiquetas
 authenticated.message.form.label.body = Cuerpo
 
