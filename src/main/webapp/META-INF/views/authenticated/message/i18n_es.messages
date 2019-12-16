@@ -22,4 +22,7 @@ authenticated.message-thread.form.label.moment = Momento
 authenticated.message.form.label.tags = Etiquetas
 authenticated.message.form.label.body = Cuerpo
 
+authenticated.message.form.label.accept = El mensaje no puede ser editado o borrado. ¿Seguro que quieres enviar el mensaje?
+
+administrator.message.form.button.create = Enviar mensaje
 authenticated.message-thread.form.button.return = Volver
