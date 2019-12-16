@@ -39,6 +39,10 @@
     </acme:form>
     
 	<acme:form-submit code="authenticated.auditRecord.button.list" method="get" action="/authenticated/audit-record/list-corresponding?id=${id}"/>
+	
+	<acme:check-access test="hasRole('Worker')">
+		<acme:form-submit code="authenticated.application.button.create" method="get" action="/worker/application/create?id=${id}"/>
+	</acme:check-access>
 	<acme:form-return code="authenticated.job.form.button.return"/>
 	
 </acme:form>

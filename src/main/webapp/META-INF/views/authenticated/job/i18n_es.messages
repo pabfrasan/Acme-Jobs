@@ -26,4 +26,5 @@ authenticated.job.form.label.descriptor= Descripción del descriptor
 authenticated.job.form.descriptor.duties = Tareas
 
 authenticated.auditRecord.button.list = Listar registros de auditorias de este trabajo
+authenticated.application.button.create = Aplicar para este trabajo
 authenticated.job.form.button.return = Volver
