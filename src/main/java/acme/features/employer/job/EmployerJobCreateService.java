@@ -81,7 +81,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			Collection<Duty> duties = descriptor.getDuties();
 			double sum = 0;
 			for (Duty d : duties) {
-				sum = +d.getPercentage();
+				sum = sum + d.getPercentage();
 			}
 			errors.state(request, sum == 100.00, "status", "employer.job.error.status.sum100");
 
@@ -95,17 +95,17 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 				for (String s : spamEn) {
 					if (d.getDescription().contains(s)) {
-						numSpamEn = +1;
+						numSpamEn = numSpamEn + 1;
 					}
 				}
-				errors.state(request, numSpamEn < custom.getThreshold(), "status", "employer.job.error.status.spam");
+				errors.state(request, numSpamEn < custom.getThreshold(), "status", "employer.job.error.status.spamEn");
 
 				for (String s : spamEs) {
 					if (d.getDescription().contains(s)) {
-						numSpamEs = +1;
+						numSpamEs = numSpamEs + 1;
 					}
 				}
-				errors.state(request, numSpamEs < custom.getThreshold(), "status", "employer.job.error.status.spam");
+				errors.state(request, numSpamEs < custom.getThreshold(), "status", "employer.job.error.status.spamEs");
 			}
 		}
 	}
@@ -124,5 +124,4 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		entity.setEmployer(employer);
 		this.repository.save(entity);
 	}
-
 }

@@ -57,7 +57,7 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		if (entity.getDeadline() != null && entity.getStatus() != null) {
 			boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
-			errors.state(request, esFinal, "status", "employer.job.error.status.esFinal");
+			errors.state(request, !esFinal, "status", "employer.job.error.status.esFinal");
 		}
 	}
 

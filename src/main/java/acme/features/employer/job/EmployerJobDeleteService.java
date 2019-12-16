@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.applications.Application;
 import acme.entities.auditRecords.AuditRecord;
 import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
@@ -55,12 +54,6 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		Collection<Application> applications = this.repository.findApplicationsByJobId(entity.getId());
-
-		boolean isEmpty = applications.isEmpty();
-		errors.state(request, !isEmpty, "status", "employer.job.error.status.esFinal");
-
 	}
 
 	@Override
@@ -80,10 +73,6 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert request != null;
 		assert entity != null;
 
-		Collection<Application> applications = this.repository.findApplicationsByJobId(entity.getId());
-		for (Application ap : applications) {
-			this.repository.delete(ap);
-		}
 		Collection<AuditRecord> auditRecords = this.repository.findAuditRecordByJobId(entity.getId());
 		for (AuditRecord au : auditRecords) {
 			this.repository.delete(au);
