@@ -77,7 +77,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert errors != null;
 
 		String stringId = (String) request.getModel().getAttribute("idDescriptor");
-		errors.state(request, stringId == "null", "idDescriptor", "employer.job.error.status.noDescriptor");
+		errors.state(request, stringId != "null", "idDescriptor", "employer.job.error.status.noDescriptor");
 
 		Date hoy = new Date();
 		boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
