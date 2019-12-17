@@ -126,6 +126,10 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 				errors.state(request, numSpamEs < custom.getThreshold(), "status", "employer.job.error.status.spamEs");
 			}
 		}
+		Model model = request.getModel();
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		model.setAttribute("descriptors", descriptors);
+		request.setModel(model);
 	}
 
 	@Override
