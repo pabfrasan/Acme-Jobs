@@ -49,6 +49,7 @@ master.menu.authenticated.company-record.list = Lista de registros de la compañ
 master.menu.authenticated.job.list = Lista de trabajos
 
 master.menu.authenticated.messageThread.list = Mis conversaciones
+master.menu.authenticated.messageThread.create= Crear conversaciones
 
 # master.menu.administrator ###################################################
 

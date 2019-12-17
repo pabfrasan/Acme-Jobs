@@ -18,12 +18,20 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedMessageThreadController extends AbstractController<Authenticated, MessageThread> {
 
 	// Internal state ---------------------------------------------------------
+	@Autowired
+	private AuthenticatedMessageThreadAddUserService	addUserService;
+
+	@Autowired
+	private AuthenticatedMessageThreadCreateService		createService;
 
 	@Autowired
 	private AuthenticatedMessageThreadListMineService	listMineService;
 
 	@Autowired
 	private AuthenticatedMessageThreadShowService		showService;
+
+	@Autowired
+	private AuthenticatedMessageThreadRemoveUser		removeUserService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -32,5 +40,8 @@ public class AuthenticatedMessageThreadController extends AbstractController<Aut
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addCustomCommand(CustomCommand.ADD_USER, BasicCommand.UPDATE, this.addUserService);
+		super.addCustomCommand(CustomCommand.REMOVE_USER, BasicCommand.UPDATE, this.removeUserService);
 	}
 }
