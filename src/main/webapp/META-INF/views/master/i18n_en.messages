@@ -89,9 +89,8 @@ master.menu.worker.application.list= List applications
 master.menu.employer = Employer
 master.menu.employer.job.list= List jobs
 master.menu.employer.application.list= List applications
-master.menu.employer.application.list.reference = List applications by reference
-master.menu.employer.application.list.status = List applications by status
-master.menu.employer.application.list.moment = List applications by moment
+master.menu.employer.application.list.order = List applications in order
+
 
 # master.menu.auditor ########################################################
 

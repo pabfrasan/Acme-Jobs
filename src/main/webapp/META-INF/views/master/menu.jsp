@@ -92,9 +92,7 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine"/>
 			<acme:menu-suboption code="master.menu.employer.application.list" action="/employer/application/list-mine"/>
-			<acme:menu-suboption code="master.menu.employer.application.list.reference" action="/employer/application/list-reference"/>
-			<acme:menu-suboption code="master.menu.employer.application.list.status" action="/employer/application/list-status"/>
-			<acme:menu-suboption code="master.menu.employer.application.list.moment" action="/employer/application/list-moment"/>
+			<acme:menu-suboption code="master.menu.employer.application.list.order" action="/employer/application/list-order"/>
 		</acme:menu-option>
 		
 		<%-- COSAS DE AUDITOR --%>
