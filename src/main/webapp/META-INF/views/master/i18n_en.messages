@@ -90,6 +90,13 @@ master.menu.employer = Employer
 master.menu.employer.job.list= List jobs
 master.menu.employer.application.list= List applications
 
+master.menu.employer.job.create = Create job
+master.menu.employer.descriptor.create = Create descriptor
+master.menu.employer.duty.create = Create duty
+master.menu.employer.application.list.order = List applications in order
+
+
+
 # master.menu.auditor ########################################################
 
 master.menu.auditor = Auditor

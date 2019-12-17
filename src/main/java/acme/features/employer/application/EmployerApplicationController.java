@@ -37,3 +37,4 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 }
+
