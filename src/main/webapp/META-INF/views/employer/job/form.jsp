@@ -34,7 +34,7 @@
 		<acme:form-select code="employer.job.form.label.idDescriptor" path="idDescriptor">
 		
 			<jstl:if test="${idDescriptor == 0}">
-				<acme:form-option code="---------" value="0"/>
+				<acme:form-option code="---------" value="${0}"/>
 			</jstl:if>
 			
 			<jstl:if test="${idDescriptor != 0}">

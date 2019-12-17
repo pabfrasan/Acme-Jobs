@@ -1,6 +1,7 @@
 
 package acme.features.employer.job;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,10 +47,13 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline", "descriptor");
 
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		model.setAttribute("descriptors", descriptors);
+
 		if (entity.getDescriptor() != null) {
-			model.setAttribute("idDescriptor", entity.getDescriptor().getId());
+			model.setAttribute("idDescriptor", entity.getDescriptor().getId() + "");
 		} else {
-			model.setAttribute("idDescriptor", 0);
+			model.setAttribute("idDescriptor", "0");
 		}
 	}
 
@@ -65,6 +69,16 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 			boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus() == "PUBLISHED";
 			errors.state(request, !esFinal, "status", "employer.job.error.status.esFinal");
 		}
+
+		if (entity.getStatus() == "PUBLISHED") {
+			errors.state(request, entity.getDescriptor() != null, "status", "employer.job.error.status.esFinal");
+		}
+
+		Model model = request.getModel();
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		model.setAttribute("descriptors", descriptors);
+
+		request.setModel(model);
 	}
 
 	@Override
