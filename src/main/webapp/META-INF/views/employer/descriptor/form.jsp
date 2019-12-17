@@ -15,15 +15,10 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
 	<acme:form-textarea code="employer.descriptor.form.label.description" path="description"/>
 	
-	
-	<!--<jstl:forEach items="${duties}" var="duty">
-			${duty.getTitle()}<br>
-			${duty.getDescription()}<br>
-			${duty.getPercentage()}<br>
-	</jstl:forEach>
-	-->
+	<acme:form-submit test="${command == 'show' }" code="employer.duty.button.list" method="get" action="/employer/duty/list?id=${id}"/>
+	<acme:form-submit test="${command == 'create' }" code="employer.descriptor.form.button.create" action="/employer/descriptor/create/"/>
 	<acme:form-return code="employer.descriptor.form.button.return"/>
 </acme:form>

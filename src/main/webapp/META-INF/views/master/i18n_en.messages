@@ -89,9 +89,9 @@ master.menu.worker.application.list= List applications
 master.menu.employer = Employer
 master.menu.employer.job.list= List jobs
 master.menu.employer.application.list= List applications
-master.menu.employer.application.list.reference = List applications by reference
-master.menu.employer.application.list.status = List applications by status
-master.menu.employer.application.list.moment = List applications by moment
+master.menu.employer.job.create = Create job
+master.menu.employer.descriptor.create = Create descriptor
+master.menu.employer.duty.create = Create duty
 
 # master.menu.auditor ########################################################
 
@@ -112,10 +112,6 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
-master.menu.user-account.worker = Worker data
-master.menu.user-account.become-worker = Become worker
-master.menu.user-account.employer = Employer data
-master.menu.user-account.become-employer = Become employer
 
 # master.footer ###############################################################
 

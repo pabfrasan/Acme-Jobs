@@ -42,6 +42,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
 		assert request != null;
 		assert entity != null;
+		assert model != null;
 
 		request.unbind(entity, model, "title", "text", "moreInfo");
 	}
