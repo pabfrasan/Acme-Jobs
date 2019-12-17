@@ -481,6 +481,18 @@
   		<property name="employer" ref="employer2Employer"/>
   		<property name="descriptor" ref="descriptor03"/>
 	</bean>	
+	
+	<bean name="job4" class="acme.entities.jobs.Job">
+		<property name="reference" value="EMP1-JOB4"/>
+	  	<property name="title" value="Title 3"/>
+	  	<property name="deadline" value="2030/12/11 23:50"/>
+	  	<property name="salary" value="30,001.99€"/>
+  		<property name="description" value="Description of job 3"/>
+	  	<property name="moreInfo" value="http://www.contigoPipo.com"/>
+	  	<property name="status" value="PUBLISHED"/>
+  		<property name="employer" ref="employer1Employer"/>
+  		<property name="descriptor" ref="descriptor03"/>
+	</bean>	
 		
 	<!-- APPLICATIONS -->
 	<bean name="application1" class="acme.entities.applications.Application">
@@ -526,7 +538,18 @@
 		<property name="job" ref="job1"/>
 		<property name="worker" ref="worker2Worker"/>
 	</bean>
-	
+
+	<bean name="application5" class="acme.entities.applications.Application">
+	  	<property name="reference" value="EMP1-JOB1-WOR3"/>
+	  	<property name="moment" value="2019/11/25 23:30"/>
+	  	<property name="status" value="ACCEPTED"/>
+	  	<property name="statement" value="Statement for application 4"/>
+  		<property name="skills" value="Can beat the shit out of you getting closer"/>
+	  	<property name="qualifications" value="Jojok"/>
+		<property name="job" ref="job1"/>
+		<property name="worker" ref="worker1Worker"/>
+	</bean>
+		
 	<!-- Descriptor -->
 	<bean id="descriptor01" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Vengo del descriptor 1 D:"/>
