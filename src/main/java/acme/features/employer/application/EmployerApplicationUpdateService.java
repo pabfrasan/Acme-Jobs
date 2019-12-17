@@ -76,7 +76,7 @@ public class EmployerApplicationUpdateService implements AbstractUpdateService<E
 		assert entity != null;
 		assert errors != null;
 
-		if (entity.getStatus() != null && entity.getStatus() == "REJECTED") {
+		if (entity.getStatus() != null && entity.getStatus().equals("REJECTED")) {
 			boolean rejected = entity.getJustification() == null || !entity.getJustification().matches("(.*)[a-zA-Z]+(.*)"); // Si es REJECTED es necesario que tenga una justificación no vacía.
 			errors.state(request, !rejected, "justification", "employer.application.error.justification.rejected");
 		}
