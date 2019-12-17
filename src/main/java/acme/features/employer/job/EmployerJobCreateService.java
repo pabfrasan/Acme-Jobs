@@ -56,9 +56,9 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		model.setAttribute("descriptors", descriptors);
 
 		if (entity.getDescriptor() != null) {
-			model.setAttribute("idDescriptor", entity.getDescriptor().getId() + "");
+			model.setAttribute("idDescriptor", entity.getDescriptor().getId());
 		} else {
-			model.setAttribute("idDescriptor", "0");
+			model.setAttribute("idDescriptor", 0);
 		}
 	}
 
@@ -126,7 +126,6 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 				errors.state(request, numSpamEs < custom.getThreshold(), "status", "employer.job.error.status.spamEs");
 			}
 		}
-
 		Model model = request.getModel();
 		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
 		model.setAttribute("descriptors", descriptors);
