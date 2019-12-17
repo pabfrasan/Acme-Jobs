@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Enumerated;
 import javax.persistence.Index;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -14,10 +13,10 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.components.StatusApplication;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
@@ -45,8 +44,9 @@ public class Application extends DomainEntity {
 	@Past
 	private Date				moment;
 
-	@Enumerated
-	private StatusApplication	status;
+	@NotBlank
+	@Pattern(regexp = "PENDING|REJECTED|ACCEPTED")
+	private String				status;
 
 	@NotBlank
 	private String				statement;

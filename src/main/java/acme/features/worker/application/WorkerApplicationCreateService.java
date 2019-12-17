@@ -6,14 +6,13 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.StatusApplication;
 import acme.entities.applications.Application;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -50,16 +49,12 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "statement", "skills", "qualifications");
-		/*
-		 * if (request.isMethod(HttpMethod.GET)) {
-		 * Integer JobId = new Integer(request.getServletRequest().getParameter("JobId"));
-		 * 
-		 * // model.setAttribute("accept", "false");
-		 * model.setAttribute("JobId", JobId);
-		 * } else {
-		 * request.transfer(model, "pending");
-		 * }
-		 */
+
+		if (request.isMethod(HttpMethod.GET)) {
+			Integer jobId = new Integer(request.getServletRequest().getParameter("jobId"));
+
+			model.setAttribute("jobId", jobId);
+		}
 	}
 
 	@Override
@@ -71,19 +66,9 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		Date moment;
 		moment = new Date(System.currentTimeMillis() - 1);
 
-		Principal principal = request.getPrincipal();
-		int workerId = principal.getAccountId();
-		Worker worker = this.repository.findWorkerById(workerId);
-
-		int JobId = request.getModel().getInteger("JobId");
-		Job job = this.repository.findOneJobById(JobId);
-
 		result = new Application();
 		result.setMoment(moment);
-		StatusApplication status = StatusApplication.PENDING;
-		result.setStatus(status);
-		result.setWorker(worker);
-		result.setJob(job);
+		result.setStatus("PENDING");
 
 		return result;
 
@@ -106,26 +91,16 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 
 		entity.setMoment(moment);
 
-		/*
-		 * int id;
-		 * id = new Integer(request.getServletRequest().getParameter("id"));
-		 */
-		/*
-		 * int idA;
-		 * idA = request.getPrincipal().getActiveRoleId();
-		 * /*
-		 * Job job = this.repository.findOneJobById(id);
-		 * entity.setJob(job);
-		 */
 		Job j;
 
-		int JobId = request.getModel().getInteger("JobId");
-		j = this.repository.findOneJobById(JobId);
+		int jobId = new Integer(request.getServletRequest().getParameter("jobId"));
+		j = this.repository.findOneJobById(jobId);
 
-		/*
-		 * Worker worker = this.repository.findWorkerById(idA);
-		 * entity.setWorker(worker);
-		 */
+		entity.setJob(j);
+
+		Worker w = this.repository.findWorkerById(request.getPrincipal().getActiveRoleId());
+
+		entity.setWorker(w);
 
 		this.repository.save(entity);
 	}
