@@ -41,7 +41,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.job.list" action="/authenticated/job/list-active"/>
 			<acme:menu-separator/>
 			
-			<acme:menu-suboption code="master.menu.authenticated,messageThread.list" action="/authenticated/message-thread/list-mine"/>
+			<acme:menu-suboption code="master.menu.authenticated.messageThread.list" action="/authenticated/message-thread/list-mine"/>
 
 		</acme:menu-option>
 	

@@ -48,7 +48,7 @@ master.menu.authenticated.investor-record.list = List investors records
 master.menu.authenticated.company-record.list = List company records
 master.menu.authenticated.job.list = List jobs
 
-master.menu.authenticated,messageThread.list = My message threads
+master.menu.authenticated.messageThread.list = My message threads
 
 # master.menu.administrator ###################################################
 
