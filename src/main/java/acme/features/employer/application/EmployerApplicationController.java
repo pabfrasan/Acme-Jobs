@@ -22,10 +22,10 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 	private EmployerApplicationListMineService	listMineService;
 
 	@Autowired
-	private EmployerApplicationListOrderService	listOrderService;
+	private EmployerApplicationShowService		showService;
 
 	@Autowired
-	private EmployerApplicationShowService		showService;
+	private EmployerApplicationUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -33,9 +33,8 @@ public class EmployerApplicationController extends AbstractController<Employer, 
 	@PostConstruct
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
-
-		super.addCustomCommand(CustomCommand.LIST_ORDER, BasicCommand.LIST, this.listOrderService);
-
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 }
+

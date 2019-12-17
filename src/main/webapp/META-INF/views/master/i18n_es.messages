@@ -81,7 +81,7 @@ master.menu.consumer.offer.create= Crear oferta
 
 # master.menu.worker ##########################################################
 
-master.menu.worker = Worker
+master.menu.worker = Trabajador
 master.menu.worker.application.list= Lista de solicitudes
 
 # master.menu.employer ########################################################
