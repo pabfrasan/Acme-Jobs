@@ -69,6 +69,8 @@ master.menu.administrator.non-commercial-banner.create = Create non commercial b
 master.menu.administrator.dashboard.show = Display Dashboard
 master.menu.administrator.customization-parameter = Customization Parameters
 
+master.menu.administrator.auditor-request.list= Request to become an auditor
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
@@ -116,6 +118,9 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor = Auditor data
 
 # master.footer ###############################################################
 

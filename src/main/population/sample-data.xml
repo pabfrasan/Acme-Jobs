@@ -696,6 +696,16 @@
 		<property name="exYear" value="25"/>
 		<property name="cvv" value="001"/>
 	  </bean>
+	  
+	  <!--AuditorRequest -->
+		<bean id="auditorRequest01" class="acme.entities.auditorRequests.AuditorRequest">
+				<property name="firm" value="Firmado por worker1"/>
+				<property name="statement" value="Declaración seria"/>
+				<property name="user">
+					<ref bean="workerUserAccount01"/>
+				</property>
+		</bean> 
+	
 		
 </beans>
 
