@@ -451,7 +451,6 @@
 		<property name="title" value="Title 1"/>
  		<property name="deadline" value="2030/12/11 23:50"/>
 		<property name="salary" value="12,000.99€"/>
-		<property name="description" value="Description of job 1"/>
 	  	<property name="moreInfo" value="http://www.contigoPipo.com"/>
 		<property name="status" value="PUBLISHED"/>
 		<property name="employer" ref="employer1Employer"/>
@@ -463,7 +462,6 @@
 	  	<property name="title" value="Title 2"/>
 	  	<property name="deadline" value="2030/12/11 23:50"/>
 	  	<property name="salary" value="30,000.99€"/>
-  		<property name="description" value="Description of job 2"/>
 	  	<property name="moreInfo" value="http://www.contigoPipo.com"/>
 	  	<property name="status" value="DRAFT"/>
   		<property name="employer" ref="employer1Employer"/>
@@ -475,7 +473,6 @@
 	  	<property name="title" value="Title 3"/>
 	  	<property name="deadline" value="2030/12/11 23:50"/>
 	  	<property name="salary" value="30,001.99€"/>
-  		<property name="description" value="Description of job 3"/>
 	  	<property name="moreInfo" value="http://www.contigoPipo.com"/>
 	  	<property name="status" value="PUBLISHED"/>
   		<property name="employer" ref="employer2Employer"/>
@@ -490,6 +487,7 @@
 	  	<property name="statement" value="Statement for application 1"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+	  	<property name="justification" value=""/>
 		<property name="job" ref="job1"/>
 		<property name="worker" ref="worker1Worker"/>
 	</bean>
@@ -501,18 +499,24 @@
 	  	<property name="statement" value="Statement for application 2"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+	  	<property name="justification" value="Let's see it JoJo!"/>
 		<property name="job" ref="job2"/>
 		<property name="worker" ref="worker1Worker"/>
 	</bean>
 	
 	<bean name="application3" class="acme.entities.applications.Application">
-	  	<property name="reference" value="EMP2-JOB3-WOR1"/>
+	  	<property name="reference" value="EMP2-JOB2-WOR1"/>
 	  	<property name="moment" value="2019/11/25 23:50"/>
 	  	<property name="status" value="ACCEPTED"/>
 	  	<property name="statement" value="Statement for application 3"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+
+	  	<property name="justification" value=""/>
 		<property name="job" ref="job3"/>
+
+		
+
 		<property name="worker" ref="worker1Worker"/>
 	</bean>
 	
@@ -523,6 +527,7 @@
 	  	<property name="statement" value="Statement for application 4"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+	  	<property name="justification" value=""/>
 		<property name="job" ref="job1"/>
 		<property name="worker" ref="worker2Worker"/>
 	</bean>

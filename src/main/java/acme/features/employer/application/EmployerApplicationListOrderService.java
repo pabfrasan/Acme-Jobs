@@ -1,6 +1,8 @@
 
 package acme.features.employer.application;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +11,10 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class EmployerApplicationShowService implements AbstractShowService<Employer, Application> {
+public class EmployerApplicationListOrderService implements AbstractListService<Employer, Application> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -23,19 +25,7 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		boolean result;
-		int applicationId;
-
-		Employer employer;
-		Principal principal;
-
-		Application application;
-		applicationId = request.getModel().getInteger("id");
-		application = this.repository.findOneApplicationById(applicationId);
-		employer = application.getJob().getEmployer();
-		principal = request.getPrincipal();
-		result = employer.getUserAccount().getId() == principal.getAccountId();
-		return result;
+		return true;
 	}
 
 	@Override
@@ -44,19 +34,18 @@ public class EmployerApplicationShowService implements AbstractShowService<Emplo
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "moment", "status", "statement", "skills", "qualifications", "justification");
+		request.unbind(entity, model, "reference", "moment", "status");
 	}
 
 	@Override
-	public Application findOne(final Request<Application> request) {
+	public Collection<Application> findMany(final Request<Application> request) {
 		assert request != null;
 
-		Application result;
-		int id;
+		Collection<Application> result;
+		Principal principal;
 
-		id = request.getModel().getInteger("id");
-
-		result = this.repository.findOneApplicationById(id);
+		principal = request.getPrincipal();
+		result = this.repository.findManyByJobAll(principal.getActiveRoleId());
 
 		return result;
 	}

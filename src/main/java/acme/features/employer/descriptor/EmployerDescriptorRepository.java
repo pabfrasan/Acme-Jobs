@@ -8,7 +8,7 @@ import acme.framework.repositories.AbstractRepository;
 
 public interface EmployerDescriptorRepository extends AbstractRepository {
 
-	@Query("select d from Descriptor d where d.id =?1")
-	Descriptor findOnebyId(int id);
+	@Query("select j.descriptor from Job j where j.id =?1")
+	Descriptor findOnebyJobId(int id);
 
 }

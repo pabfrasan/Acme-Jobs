@@ -48,7 +48,7 @@ master.menu.authenticated.investor-record.list = List investors records
 master.menu.authenticated.company-record.list = List company records
 master.menu.authenticated.job.list = List jobs
 
-master.menu.authenticated,messageThread.list = My message threads
+master.menu.authenticated.messageThread.list = My message threads
 
 # master.menu.administrator ###################################################
 
@@ -92,6 +92,13 @@ master.menu.employer = Employer
 master.menu.employer.job.list= List jobs
 master.menu.employer.application.list= List applications
 
+master.menu.employer.job.create = Create job
+master.menu.employer.descriptor.create = Create descriptor
+master.menu.employer.duty.create = Create duty
+master.menu.employer.application.list.order = List applications in order
+
+
+
 # master.menu.auditor ########################################################
 
 master.menu.auditor = Auditor
@@ -111,10 +118,6 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
-master.menu.user-account.worker = Worker data
-master.menu.user-account.become-worker = Become worker
-master.menu.user-account.employer = Employer data
-master.menu.user-account.become-employer = Become employer
 
 master.menu.user-account.become-auditor = Become an auditor
 master.menu.user-account.auditor = Auditor data

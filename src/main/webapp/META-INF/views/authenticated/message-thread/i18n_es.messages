@@ -18,5 +18,7 @@ authenticated.message-thread.list.label.moment = Momento
 authenticated.message-thread.form.label.title = Titulo
 authenticated.message-thread.form.label.moment = Momento
 
+authenticated.message-thread.form.button.createMessage = Enviar mensaje
 authenticated.message-thread.form.button.seeMessages = Ver mensajes
+
 authenticated.message-thread.form.button.return = Volver

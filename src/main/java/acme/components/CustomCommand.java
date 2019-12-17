@@ -15,6 +15,7 @@ package acme.components;
 import acme.framework.components.Command;
 
 public enum CustomCommand implements Command {
-	FIVE_STARS, LIST_MINE, LIST_WRITTEN, LIST_NOT_WRITTEN, LIST_CORRESPONDING, LIST_ACTIVE
+
+	FIVE_STARS, LIST_MINE, LIST_WRITTEN, LIST_NOT_WRITTEN, LIST_CORRESPONDING, LIST_ACTIVE, LIST_ORDER
 
 }

@@ -596,10 +596,12 @@ Worker
   <element>
     <id>UMLClass</id>
     <coordinates>
+
       <x>987</x>
       <y>476</y>
       <w>280</w>
       <h>91</h>
+
     </coordinates>
     <panel_attributes>Application
 --
@@ -608,7 +610,8 @@ Worker
 + status: StatusApplication{NotNull}
 + statement: String{NotBlank}
 + skills: String{NotBlank}
-+ qualification: String{NotBlank}</panel_attributes>
++ qualification: String{NotBlank}
++ justification: String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
