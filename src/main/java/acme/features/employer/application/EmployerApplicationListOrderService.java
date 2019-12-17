@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EmployerApplicationListStatusService implements AbstractListService<Employer, Application> {
+public class EmployerApplicationListOrderService implements AbstractListService<Employer, Application> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -45,7 +45,7 @@ public class EmployerApplicationListStatusService implements AbstractListService
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyByJobStatus(principal.getActiveRoleId());
+		result = this.repository.findManyByJobAll(principal.getActiveRoleId());
 
 		return result;
 	}

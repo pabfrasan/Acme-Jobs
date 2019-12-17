@@ -95,6 +95,8 @@
 			<acme:menu-suboption code="master.menu.employer.job.create" action="/employer/job/create"/>
 			<acme:menu-suboption code="master.menu.employer.descriptor.create" action="/employer/descriptor/create"/>
 			<acme:menu-suboption code="master.menu.employer.duty.create" action="/employer/duty/create"/>
+			<acme:menu-suboption code="master.menu.employer.application.list.order" action="/employer/application/list-order"/>
+
 		</acme:menu-option>
 		
 		<%-- COSAS DE AUDITOR --%>
