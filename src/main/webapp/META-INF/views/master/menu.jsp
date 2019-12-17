@@ -84,7 +84,7 @@
 		<%-- COSAS DE WORKER --%>
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
-			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list"/>
+			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list-mine"/>
 		</acme:menu-option>
 		
 	  <%-- COSAS DE EMPLOYER --%>

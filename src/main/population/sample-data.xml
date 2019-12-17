@@ -487,6 +487,7 @@
 	  	<property name="statement" value="Statement for application 1"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+	  	<property name="justification" value=""/>
 		<property name="job" ref="job1"/>
 		<property name="worker" ref="worker1Worker"/>
 	</bean>
@@ -498,6 +499,7 @@
 	  	<property name="statement" value="Statement for application 2"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+	  	<property name="justification" value="Let's see it JoJo!"/>
 		<property name="job" ref="job2"/>
 		<property name="worker" ref="worker1Worker"/>
 	</bean>
@@ -509,7 +511,12 @@
 	  	<property name="statement" value="Statement for application 3"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
-		<property name="job" ref="job2"/>
+
+	  	<property name="justification" value=""/>
+		<property name="job" ref="job3"/>
+
+		
+
 		<property name="worker" ref="worker1Worker"/>
 	</bean>
 	
@@ -520,6 +527,7 @@
 	  	<property name="statement" value="Statement for application 4"/>
   		<property name="skills" value="Can beat the shit out of you getting closer"/>
 	  	<property name="qualifications" value="Jojok"/>
+	  	<property name="justification" value=""/>
 		<property name="job" ref="job1"/>
 		<property name="worker" ref="worker2Worker"/>
 	</bean>
