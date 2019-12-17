@@ -314,27 +314,23 @@
 			<property name="title" value="Title1"/>
 			<property name="description" value="Description1"/>
 			<property name="percentage" value="12.2"/>
-			<property name="descriptor" ref="descriptor01"/>
 	</bean> 
 		
 	<bean id="duty02" class="acme.entities.duties.Duty">
 			<property name="title" value="Title2"/>
 			<property name="description" value="Description2"/>
 			<property name="percentage" value="100"/>
-			<property name="descriptor" ref="descriptor02"/>
 	</bean> 
 		
 	<bean id="duty03" class="acme.entities.duties.Duty">
 			<property name="title" value="Title3"/>
 			<property name="description" value="Description3"/>
 			<property name="percentage" value="50"/>
-			<property name="descriptor" ref="descriptor02"/>
 	</bean> 
 	<bean id="duty04" class="acme.entities.duties.Duty">
 			<property name="title" value="Title4"/>
 			<property name="description" value="Description4"/>
 			<property name="percentage" value="50"/>
-			<property name="descriptor" ref="descriptor03"/>
 	</bean> 
 		
 	<!--  Employer -->
@@ -527,7 +523,11 @@
 	<!-- Descriptor -->
 	<bean id="descriptor01" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Vengo del descriptor 1 D:"/>
-		<property name="duties" ref="duty01"/>
+		<property name="duties">
+			<list>
+				<ref bean="duty01"/>
+			</list>
+		</property>
 	</bean> 
 	
 	<bean id="descriptor02" class="acme.entities.descriptors.Descriptor">
@@ -542,7 +542,11 @@
   
   <bean id="descriptor03" class="acme.entities.descriptors.Descriptor">
 		<property name="description" value="Description3"/>
-		<property name="duties" ref="duty04"/>
+		<property name="duties">
+			<list>
+				<ref bean="duty04"/>
+			</list>
+		</property>
 	</bean>
   
 	<!-- Messages -->

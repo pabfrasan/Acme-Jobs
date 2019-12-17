@@ -90,11 +90,12 @@
 	  <%-- COSAS DE EMPLOYER --%>
 
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
+			<acme:menu-suboption code="master.menu.employer.job.create" action="/employer/job/create"/>
 			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine"/>
 			<acme:menu-suboption code="master.menu.employer.application.list" action="/employer/application/list-mine"/>
-			<acme:menu-suboption code="master.menu.employer.job.create" action="/employer/job/create"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.employer.descriptor.create" action="/employer/descriptor/create"/>
-			<acme:menu-suboption code="master.menu.employer.duty.create" action="/employer/duty/create"/>
+			<acme:menu-suboption code="master.menu.employer.descriptor.list" action="/employer/descriptor/list"/>
 		</acme:menu-option>
 		
 		<%-- COSAS DE AUDITOR --%>

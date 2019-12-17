@@ -9,7 +9,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.Status;
 import acme.entities.customizationParameters.CustomizationParameter;
 import acme.entities.descriptors.Descriptor;
 import acme.entities.duties.Duty;
@@ -42,7 +41,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "descriptor", "employer");
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -51,9 +50,16 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline");
+		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline", "descriptor");
+
 		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
 		model.setAttribute("descriptors", descriptors);
+
+		if (entity.getDescriptor() != null) {
+			model.setAttribute("idDescriptor", entity.getDescriptor().getId());
+		} else {
+			model.setAttribute("idDescriptor", 0);
+		}
 	}
 
 	@Override
@@ -62,6 +68,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		Job result;
 
 		result = new Job();
+		result.setStatus("DRAFT");
 
 		return result;
 	}
@@ -72,14 +79,24 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		Date hoy = new Date();
-		boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
+		boolean esFinal;
+
+		if (!errors.hasErrors("deadline")) {
+			Date hoy = new Date();
+			esFinal = hoy.before(entity.getDeadline()) && entity.getStatus() == "PUBLISHED";
+		} else {
+			esFinal = false;
+		}
+
 		if (esFinal) {
+
 			String stringId = (String) request.getModel().getAttribute("idDescriptor");
 			int id = Integer.parseInt(stringId);
 			Descriptor descriptor = this.repository.findDescriptorById(id);
+
 			Collection<Duty> duties = descriptor.getDuties();
 			double sum = 0;
+
 			for (Duty d : duties) {
 				sum = sum + d.getPercentage();
 			}
@@ -89,6 +106,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			CustomizationParameter custom = customs.get(0);
 			String[] spamEn = custom.getSpamWordsEn().split(",");
 			String[] spamEs = custom.getSpamWordsEs().split(",");
+
 			for (Duty d : duties) {
 				long numSpamEn = 0;
 				long numSpamEs = 0;
@@ -116,10 +134,13 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 
 		String stringId = (String) request.getModel().getAttribute("idDescriptor");
-		int id = Integer.parseInt(stringId);
-		Descriptor descriptor = this.repository.findDescriptorById(id);
-		entity.setDescriptor(descriptor);
 
+		Integer desId = new Integer(stringId);
+
+		if (desId != 0) {
+			Descriptor descriptor = this.repository.findDescriptorById(desId);
+			entity.setDescriptor(descriptor);
+		}
 		Employer employer = this.repository.findEmployerById(request.getPrincipal().getActiveRoleId());
 		entity.setEmployer(employer);
 		this.repository.save(entity);

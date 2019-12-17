@@ -8,10 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+#Descriptor List
+
+employer.descriptor.list.label.description = Description
+
 #DESCRIPTOR FORM
 
 employer.descriptor.form.label.description = Description
+
 employer.duty.button.list = Duties of this descriptor
+employer.duty.button.create = New duty
+
 employer.descriptor.form.button.create = Create
 employer.descriptor.form.button.return= Return
 

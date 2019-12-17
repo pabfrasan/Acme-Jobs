@@ -6,8 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.auditRecords.AuditRecord;
-import acme.entities.duties.Duty;
+import acme.entities.descriptors.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -37,6 +36,8 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		errors.state(request, entity.getStatus() == "DRAFT", "status", "employer.job.error.status.no-draft");
+
 		request.bind(entity, errors);
 	}
 
@@ -46,7 +47,16 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline");
+		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline", "descriptor");
+
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		model.setAttribute("descriptors", descriptors);
+
+		if (entity.getDescriptor() != null) {
+			model.setAttribute("idDescriptor", entity.getDescriptor().getId());
+		} else {
+			model.setAttribute("idDescriptor", 0);
+		}
 	}
 
 	@Override
@@ -73,15 +83,7 @@ public class EmployerJobDeleteService implements AbstractDeleteService<Employer,
 		assert request != null;
 		assert entity != null;
 
-		Collection<AuditRecord> auditRecords = this.repository.findAuditRecordByJobId(entity.getId());
-		for (AuditRecord au : auditRecords) {
-			this.repository.delete(au);
-		}
 		this.repository.delete(entity);
-		for (Duty d : entity.getDescriptor().getDuties()) {
-			this.repository.delete(d);
-		}
-		this.repository.delete(entity.getDescriptor());
 	}
 
 }

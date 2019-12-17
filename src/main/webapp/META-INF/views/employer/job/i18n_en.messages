@@ -16,13 +16,17 @@ employer.job.list.label.deadline = Deadline
 employer.job.list.label.title = Title
 
 #JOB FORM
-employer.job.form.label.status = Status
+
 employer.job.form.label.reference = Reference
 employer.job.form.label.deadline = Deadline
 employer.job.form.label.salary = Salary
 employer.job.form.label.moreInfo = More Info
 employer.job.form.label.title = Title
 employer.job.form.label.idDescriptor = Descriptor
+
+employer.job.form.label.status = Status
+employer.job.form.label.status.draft = Draft
+employer.job.form.label.status.published = Published
 
 employer.auditRecord.button.list = List audit records of this job
 employer.descriptor.button.show = Descriptor of this job
@@ -40,5 +44,7 @@ employer.job.error.status.isEmpty = You can't delete a job that a worker have ap
 employer.job.error.status.sum100 = The job can't be in final mode if the duties of his descriptor don't sum up to 100%
 employer.job.error.status.spamEn = One of the duties have words in english that aren't permitted
 employer.job.error.status.spamEs = One of the duties have words in spanish that aren't permitted
+
+employer.job.error.status.no-draft = The job is already in final mode, it can't be deleted
 
 

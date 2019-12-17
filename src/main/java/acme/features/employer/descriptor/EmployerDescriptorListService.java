@@ -1,6 +1,8 @@
 
 package acme.features.employer.descriptor;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,11 +10,10 @@ import acme.entities.descriptors.Descriptor;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class EmployerDescriptorShowService implements AbstractShowService<Employer, Descriptor> {
-	// Internal state ---------------------------------------------------------
+public class EmployerDescriptorListService implements AbstractListService<Employer, Descriptor> {
 
 	@Autowired
 	EmployerDescriptorRepository repository;
@@ -32,19 +33,17 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		assert model != null;
 
 		request.unbind(entity, model, "description");
-
 	}
 
 	@Override
-	public Descriptor findOne(final Request<Descriptor> request) {
+	public Collection<Descriptor> findMany(final Request<Descriptor> request) {
 		assert request != null;
 
-		Descriptor result;
-		int id;
+		Collection<Descriptor> result;
 
-		id = new Integer(request.getServletRequest().getParameter("id"));
-		result = this.repository.findOneById(id);
+		result = this.repository.findManyAll();
 
 		return result;
 	}
+
 }

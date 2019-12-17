@@ -22,4 +22,7 @@
 		<put-attribute name="body" type="template" value="../employer/descriptor/form.jsp" />
 	</definition>
 	
+	<definition name="employer/descriptor/list" extends="master">
+		<put-attribute name="body" type="template" value="../employer/descriptor/list.jsp" />
+	</definition>
 </tiles-definitions>

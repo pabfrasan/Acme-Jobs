@@ -1,8 +1,6 @@
 
 package acme.features.employer.duty;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +8,7 @@ import acme.entities.descriptors.Descriptor;
 import acme.entities.duties.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
@@ -36,7 +35,7 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "descriptor");
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -46,8 +45,12 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert model != null;
 
 		request.unbind(entity, model, "title", "description", "percentage");
-		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
-		model.setAttribute("descriptors", descriptors);
+
+		if (request.isMethod(HttpMethod.GET)) {
+			Integer descriptorId = new Integer(request.getServletRequest().getParameter("descriptorId"));
+
+			model.setAttribute("descriptorId", descriptorId);
+		}
 	}
 
 	@Override
@@ -72,11 +75,18 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert request != null;
 		assert entity != null;
 
-		String stringId = (String) request.getModel().getAttribute("idDescriptor");
-		int id = Integer.parseInt(stringId);
-		Descriptor descriptor = this.repository.findDescriptorById(id);
-		entity.setDescriptor(descriptor);
-		this.repository.save(entity);
+		Duty saved;
+		Integer descriptorId;
+
+		descriptorId = new Integer(request.getServletRequest().getParameter("descriptorId"));
+
+		Descriptor descriptor = this.repository.findDescriptorById(descriptorId);
+
+		saved = this.repository.save(entity);
+
+		descriptor.getDuties().add(saved);
+
+		this.repository.save(descriptor);
 	}
 
 }

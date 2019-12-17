@@ -20,14 +20,7 @@
 	<acme:form-textarea code="employer.duty.form.label.description" path="description"/>
 	<acme:form-integer code="employer.duty.form.label.percentage" path="percentage"/>
 	
-	<jstl:if test="${command == 'create' }">
-		<acme:form-select code="employer.duty.form.label.idDescriptor" path="idDescriptor">
-			<jstl:forEach items="${descriptors}" var="descriptor">
-				<acme:form-option code="${descriptor.getDescription()}" value="${descriptor.getId()}"/>
-			</jstl:forEach>
-		</acme:form-select>
-	</jstl:if>
 	
-	<acme:form-submit test="${command == 'create' }" code="employer.duty.form.button.create" action="/employer/duty/create/"/>
+	<acme:form-submit test="${command == 'create' }" code="employer.duty.form.button.create" action="/employer/duty/create?descriptorId=${descriptorId}"/>
 	<acme:form-return code="employer.duty.form.button.return"/>
 </acme:form>

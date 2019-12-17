@@ -1,10 +1,12 @@
 
 package acme.features.employer.job;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.Status;
+import acme.entities.descriptors.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
@@ -36,7 +38,7 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		job = this.repository.findOneJobById(jobId);
 		employer = job.getEmployer();
 		principal = request.getPrincipal();
-		result = job.getStatus().equals(Status.PUBLISHED) || !job.getStatus().equals(Status.PUBLISHED) && employer.getUserAccount().getId() == principal.getAccountId();
+		result = job.getStatus() == "PUBLISHED" || job.getStatus() != "PUBLISHED" && employer.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 
@@ -46,7 +48,16 @@ public class EmployerJobShowService implements AbstractShowService<Employer, Job
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline");
+		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline", "descriptor");
+
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		model.setAttribute("descriptors", descriptors);
+
+		if (entity.getDescriptor() != null) {
+			model.setAttribute("idDescriptor", entity.getDescriptor().getId());
+		} else {
+			model.setAttribute("idDescriptor", 0);
+		}
 	}
 
 	@Override

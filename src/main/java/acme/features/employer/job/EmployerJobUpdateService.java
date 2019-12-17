@@ -6,7 +6,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.Status;
+import acme.entities.descriptors.Descriptor;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
@@ -44,7 +44,13 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline");
+		request.unbind(entity, model, "title", "reference", "moreInfo", "salary", "status", "deadline", "descriptor");
+
+		if (entity.getDescriptor() != null) {
+			model.setAttribute("idDescriptor", entity.getDescriptor().getId());
+		} else {
+			model.setAttribute("idDescriptor", 0);
+		}
 	}
 
 	@Override
@@ -55,8 +61,8 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 
 		Date hoy = new Date();
 
-		if (entity.getDeadline() != null && entity.getStatus() != null) {
-			boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
+		if (!errors.hasErrors("deadline")) {
+			boolean esFinal = hoy.before(entity.getDeadline()) && entity.getStatus() == "PUBLISHED";
 			errors.state(request, !esFinal, "status", "employer.job.error.status.esFinal");
 		}
 	}
@@ -77,6 +83,16 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 	public void update(final Request<Job> request, final Job entity) {
 		assert request != null;
 		assert entity != null;
+
+		String stringId = (String) request.getModel().getAttribute("idDescriptor");
+
+		Integer desId = new Integer(stringId);
+
+		if (desId != 0) {
+			Descriptor descriptor = this.repository.findDescriptorById(desId);
+			entity.setDescriptor(descriptor);
+		}
+
 		this.repository.save(entity);
 	}
 }
