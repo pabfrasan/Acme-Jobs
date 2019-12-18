@@ -15,7 +15,7 @@ public interface AuthenticatedAuditRecordRepository extends AbstractRepository {
 	@Query("select a from AuditRecord a where a.id = ?1")
 	AuditRecord findOneAuditRecordById(int id);
 
-	@Query("select a from AuditRecord a where a.job.id = ?1")
-	Collection<AuditRecord> findManyCorrespondingByJobId(Integer jobId);
+	@Query("select a from AuditRecord a where a.job.id = ?1 and a.status = 1")
+	Collection<AuditRecord> findManyCorrespondingPublishedByJobId(Integer jobId);
 
 }
