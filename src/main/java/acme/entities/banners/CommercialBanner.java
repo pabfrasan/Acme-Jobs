@@ -24,7 +24,7 @@ public class CommercialBanner extends Banner {
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	@Valid
 	private CreditCard creditCard;
 }

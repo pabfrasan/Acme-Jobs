@@ -39,8 +39,7 @@ public class AdministratorCommercialBannerCreateService implements AbstractCreat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "targetUrl", "creditCard", "slogan");
-
+		request.unbind(entity, model, "picture", "targetUrl", "slogan");
 	}
 
 	@Override
@@ -60,6 +59,8 @@ public class AdministratorCommercialBannerCreateService implements AbstractCreat
 
 	@Override
 	public void create(final Request<CommercialBanner> request, final CommercialBanner entity) {
+		assert request != null;
+		assert entity != null;
 
 		this.repository.save(entity);
 
