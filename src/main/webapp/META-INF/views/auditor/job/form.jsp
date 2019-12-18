@@ -22,7 +22,6 @@
 	<acme:form-moment code="auditor.job.form.label.deadline" path="deadline"/>
 	<acme:form-money code="auditor.job.form.label.salary" path="salary"/>
 	<acme:form-url code="auditor.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-textarea code="auditor.job.form.label.description" path="description"/>
 	<acme:form-textarea code="auditor.job.form.label.descriptor" path="descriptor"/>
 	
 	<strong><acme:message  code="auditor.job.form.descriptor.duties"/></strong><br>
