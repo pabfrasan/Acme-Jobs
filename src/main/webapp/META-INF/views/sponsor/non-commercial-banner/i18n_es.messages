@@ -1,0 +1,26 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#NON COMMERCIAL BANNER LIST
+sponsor.non-commercial-banner.list.label.targetUrl = Url:
+sponsor.non-commercial-banner.list.label.slogan = Eslogan
+
+#NON COMMERCIAL BANNER FORM
+sponsor.non-commercial-banner.form.label.slogan = Eslogan: 
+sponsor.non-commercial-banner.form.label.picture = Imagen: 
+sponsor.non-commercial-banner.form.label.jingle = Jingle: 
+sponsor.non-commercial-banner.form.label.targetUrl = Url: 
+
+sponsor.non-commercial-banner.form.button.update = Actualizar
+sponsor.non-commercial-banner.form.button.return = Volver
+sponsor.non-commercial-banner.form.button.create = Crear
+sponsor.non-commercial-banner.form.button.delete = Borrar
+
+sponsor.non-commercial-banner.error.slogan.spam = El anuncio no commercial posee unas palabras que no estan permitidas

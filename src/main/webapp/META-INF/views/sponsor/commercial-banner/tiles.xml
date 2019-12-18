@@ -17,9 +17,13 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+
+	<definition name="sponsor/commercial-banner/list" extends="master">		
+		<put-attribute name="body" type="template" value="../sponsor/commercial-banner/list.jsp" />
+	</definition>
 	
-	<definition name="authenticated/user-account/form" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/user-account/form.jsp" />
+	<definition name="sponsor/commercial-banner/form" extends="master">
+		<put-attribute name="body" type="template" value="../sponsor/commercial-banner/form.jsp" />
 	</definition>
 
 </tiles-definitions>

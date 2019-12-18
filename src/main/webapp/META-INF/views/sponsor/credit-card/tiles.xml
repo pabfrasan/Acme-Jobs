@@ -18,8 +18,8 @@
 
 <tiles-definitions>
 	
-	<definition name="authenticated/user-account/form" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/user-account/form.jsp" />
+	<definition name="sponsor/credit-card/form" extends="master">
+		<put-attribute name="body" type="template" value="../sponsor/credit-card/form.jsp" />
 	</definition>
 
 </tiles-definitions>

@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.messageThread;
+package acme.features.sponsor.creditCards;
 
 import javax.annotation.PostConstruct;
 
@@ -7,30 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.components.CustomCommand;
-import acme.entities.messageThreads.MessageThread;
+import acme.entities.creditCards.CreditCard;
+import acme.entities.roles.Sponsor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/message-thread/")
-public class AuthenticatedMessageThreadController extends AbstractController<Authenticated, MessageThread> {
-
+@RequestMapping("/sponsor/credit-card/")
+public class SponsorCreditCardController extends AbstractController<Sponsor, CreditCard> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedMessageThreadListMineService	listMineService;
-
-	@Autowired
-	private AuthenticatedMessageThreadShowService		showService;
-
+	private SponsorCreditCardShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
+
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 }

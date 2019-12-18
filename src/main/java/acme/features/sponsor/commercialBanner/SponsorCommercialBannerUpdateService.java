@@ -1,21 +1,25 @@
 
-package acme.features.administrator.commercialBanner;
+package acme.features.sponsor.commercialBanner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.CommercialBanner;
+import acme.entities.customizationParameters.CustomizationParameter;
+import acme.entities.roles.Sponsor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Administrator;
-import acme.framework.services.AbstractDeleteService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorCommercialBannerDeleteService implements AbstractDeleteService<Administrator, CommercialBanner> {
+public class SponsorCommercialBannerUpdateService implements AbstractUpdateService<Sponsor, CommercialBanner> {
 
 	@Autowired
-	AdministratorCommercialBannerRepository repository;
+	SponsorCommercialBannerRepository repository;
 
 
 	@Override
@@ -61,14 +65,38 @@ public class AdministratorCommercialBannerDeleteService implements AbstractDelet
 		assert entity != null;
 		assert errors != null;
 
+		List<CustomizationParameter> customs = new ArrayList<>(this.repository.findAllCustomizationParameter());
+		CustomizationParameter custom = customs.get(0);
+		String[] spamEn = custom.getSpamWordsEn().split(",");
+		String[] spamEs = custom.getSpamWordsEs().split(",");
+		long numSpam = 0;
+
+		for (String s : spamEn) {
+			if (entity.getSlogan().contains(s)) {
+				numSpam = numSpam + 1;
+			} else if (entity.getPicture().contains(s)) {
+				numSpam = numSpam + 1;
+			} else if (entity.getTargetUrl().contains(s)) {
+				numSpam = numSpam + 1;
+			}
+		}
+
+		for (String s : spamEs) {
+			if (entity.getSlogan().contains(s)) {
+				numSpam = numSpam + 1;
+			} else if (entity.getPicture().contains(s)) {
+				numSpam = numSpam + 1;
+			} else if (entity.getTargetUrl().contains(s)) {
+				numSpam = numSpam + 1;
+			}
+		}
+		errors.state(request, numSpam < custom.getThreshold(), "slogan", "sponsor.commercial-banner.error.slogan.spam");
 	}
 
 	@Override
-	public void delete(final Request<CommercialBanner> request, final CommercialBanner entity) {
+	public void update(final Request<CommercialBanner> request, final CommercialBanner entity) {
 		assert request != null;
-
-		this.repository.delete(entity);
-
+		this.repository.save(entity);
 	}
 
 }

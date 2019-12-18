@@ -50,10 +50,6 @@ master.menu.authenticated.job.list = List jobs
 
 master.menu.authenticated.messageThread.list = My message threads
 
-master.menu.authenticated.messageThread.create = Create message thread
-
-
-
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -101,8 +97,6 @@ master.menu.employer.descriptor.create = Create descriptor
 master.menu.employer.duty.create = Create duty
 master.menu.employer.application.list.order = List applications in order
 
-
-
 # master.menu.auditor ########################################################
 
 master.menu.auditor = Auditor
@@ -112,7 +106,10 @@ master.menu.auditor.job.list-not-written = List of job that don´t have an audit
 # master.menu.sponsor ########################################################
 
 master.menu.sponsor = Sponsor
-master.menu.sponsor.banner.list = My banners
+master.menu.sponsor.commercial-banner.list = List commercial banners
+master.menu.sponsor.non-commercial-banner.list = List non commercial banners
+master.menu.sponsor.commercial-banner.create = Create commercial banners
+master.menu.sponsor.non-commercial-banner.create = Create non commercial banners
 
 # master.menu.user-account ####################################################
 
@@ -122,10 +119,6 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
-master.menu.user-account.become-employer = Become a employer  
-master.menu.user-account.employer = Employer data
-master.menu.user-account.become-worker = Become a worker  
-master.menu.user-account.worker = Worker data 
 
 master.menu.user-account.become-auditor = Become an auditor
 master.menu.user-account.auditor = Auditor data

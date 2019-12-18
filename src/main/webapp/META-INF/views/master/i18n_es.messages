@@ -48,11 +48,7 @@ master.menu.authenticated.investor-record.list = Lista de registros de inversore
 master.menu.authenticated.company-record.list = Lista de registros de la compañia
 master.menu.authenticated.job.list = Lista de trabajos
 
-
-master.menu.authenticated.messageThread.list = Mis conversaciones
-master.menu.authenticated.messageThread.create= Crear conversaciones
 master.menu.authenticated,messageThread.list = Mis conversaciones
-
 
 # master.menu.administrator ###################################################
 
@@ -113,7 +109,10 @@ master.menu.auditor.job.list-not-written = Lista de trabajos que no poseen un re
 # master.menu.sponsor ########################################################
 
 master.menu.sponsor = Patrocinador
-master.menu.sponsor.banner.list = Mis anuncios publicitarios
+master.menu.sponsor.commercial-banner.list = Listar anuncios commeriales
+master.menu.sponsor.non-commercial-banner.list = Listar anuncios no commeriales
+master.menu.sponsor.commercial-banner.create = Crear anuncios commeriales
+master.menu.sponsor.non-commercial-banner.create = Crear anuncios no commeriales
 
 # master.menu.user-account ####################################################
 

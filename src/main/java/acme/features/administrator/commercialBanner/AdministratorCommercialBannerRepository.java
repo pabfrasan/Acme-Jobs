@@ -21,7 +21,4 @@ public interface AdministratorCommercialBannerRepository extends AbstractReposit
 
 	@Query("select s from Sponsor s")
 	Collection<Sponsor> findAllSponsors();
-
-	@Query("select s from Sponsor s where s.id = ?1")
-	Sponsor findSponsorById(int id);
 }

@@ -1,5 +1,5 @@
 
-package acme.features.administrator.nonCommercialBanner;
+package acme.features.sponsor.nonCommercialBanner;
 
 import javax.annotation.PostConstruct;
 
@@ -7,36 +7,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.banners.NonCommercialBanner;
+import acme.entities.roles.Sponsor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Administrator;
 
 @Controller
-@RequestMapping("/administrator/non-commercial-banner/")
-public class AdministratorNonCommercialBannerController extends AbstractController<Administrator, NonCommercialBanner> {
+@RequestMapping("/sponsor/non-commercial-banner/")
+public class SponsorNonCommercialBannerController extends AbstractController<Sponsor, NonCommercialBanner> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorNonCommercialBannerListService		listService;
+	private SponsorNonCommercialBannerListMineService	listMineService;
 
 	@Autowired
-	private AdministratorNonCommercialBannerShowService		showService;
+	private SponsorNonCommercialBannerShowService		showService;
 
 	@Autowired
-	private AdministratorNonCommercialBannerCreateService	createService;
+	private SponsorNonCommercialBannerCreateService		createService;
 
 	@Autowired
-	private AdministratorNonCommercialBannerUpdateService	updateService;
+	private SponsorNonCommercialBannerUpdateService		updateService;
 
 	@Autowired
-	private AdministratorNonCommercialBannerDeleteService	deleteService;
+	private SponsorNonCommercialBannerDeleteService		deleteService;
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
