@@ -19,6 +19,9 @@ public interface AuthenticatedMessageThreadRepository extends AbstractRepository
 	@Query("select u from UserAccount u where u.id = ?1")
 	UserAccount findPrincipal(int id);
 
+	@Query("select u from UserAccount u where u.username = ?1")
+	UserAccount findUserByUserName(String username);
+
 	@Query("select m from MessageThread m join m.users use where use = ?1")
 	Collection<MessageThread> findMyMessageThread(UserAccount user);
 
