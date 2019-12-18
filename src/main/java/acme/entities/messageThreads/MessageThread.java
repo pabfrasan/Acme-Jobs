@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -46,7 +47,7 @@ public class MessageThread extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 
 	@NotEmpty
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Collection<@Valid UserAccount>	users;
 
 	@NotNull

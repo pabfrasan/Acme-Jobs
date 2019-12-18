@@ -50,6 +50,10 @@ master.menu.authenticated.job.list = List jobs
 
 master.menu.authenticated.messageThread.list = My message threads
 
+master.menu.authenticated.messageThread.create = Create message thread
+
+
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
