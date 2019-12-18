@@ -17,6 +17,10 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+
+	<definition name="sponsor/credit-card/list" extends="master">
+		<put-attribute name="body" type="template" value="../sponsor/credit-card/list.jsp" />
+	</definition>
 	
 	<definition name="sponsor/credit-card/form" extends="master">
 		<put-attribute name="body" type="template" value="../sponsor/credit-card/form.jsp" />

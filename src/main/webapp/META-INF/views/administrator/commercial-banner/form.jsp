@@ -20,10 +20,10 @@
 	<acme:form-textbox code="administrator.commercial-banner.form.label.picture" path="picture" />
 	<acme:form-textbox code="administrator.commercial-banner.form.label.targetUrl" path="targetUrl"/>
 	
-	<acme:form-submit test="${command == 'show' }" 
-		code="administrator.credit-card.button.show" 
+	<acme:form-submit test="${command == 'show'}" 
+		code="administrator.credit-card.button.list" 
 		method="get" 
-		action="/administrator/credit-card/show?id=${id}"/>
+		action="/administrator/credit-card/list-corresponding?id=${id}"/>
 
 	<acme:form-submit test="${command == 'show' }"
 		code="administrator.commercial-banner.form.button.update" 

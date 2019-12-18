@@ -9,6 +9,10 @@
 # they accept any liabilities with respect to them.
 
 #CREDIT CARD FORM
+sponsor.credit-card.list.label.holderName = Holder name
+sponsor.credit-card.list.label.brandName = Brand name
+
+#CREDIT CARD FORM
 sponsor.credit-card.form.label.holderName = Holder name
 sponsor.credit-card.form.label.brandName = Brand name
 sponsor.credit-card.form.label.number = Number

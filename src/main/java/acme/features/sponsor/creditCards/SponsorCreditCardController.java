@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.creditCards.CreditCard;
 import acme.entities.roles.Sponsor;
 import acme.framework.components.BasicCommand;
@@ -18,13 +19,17 @@ public class SponsorCreditCardController extends AbstractController<Sponsor, Cre
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorCreditCardShowService showService;
+	private SponsorCreditCardListCorrespondingService	listCorrespondingService;
+
+	@Autowired
+	private SponsorCreditCardShowService				showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	private void initialise() {
+		super.addCustomCommand(CustomCommand.LIST_CORRESPONDING, BasicCommand.LIST, this.listCorrespondingService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 }

@@ -21,9 +21,9 @@
 	<acme:form-textbox code="sponsor.commercial-banner.form.label.targetUrl" path="targetUrl"/>
 	
 	<acme:form-submit test="${command == 'show' }" 
-		code="sponsor.credit-card.button.show" 
+		code="sponsor.credit-card.button.list" 
 		method="get" 
-		action="/sponsor/credit-card/show?id=${id}"/>
+		action="/sponsor/credit-card/list-corresponding?id=${id}"/>
 
 	<acme:form-submit test="${command == 'show' }"
 		code="sponsor.commercial-banner.form.button.update" 

@@ -17,7 +17,7 @@ administrator.commercial-banner.form.label.slogan = Slogan:
 administrator.commercial-banner.form.label.picture = Picture: 
 administrator.commercial-banner.form.label.targetUrl = Url: 
 
-administrator.credit-card.button.show = Credit card of this commercial banner
+administrator.credit-card.button.list = Credit card of this commercial banner
 
 administrator.commercial-banner.form.button.update = Update
 administrator.commercial-banner.form.button.create = Create
