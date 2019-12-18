@@ -35,10 +35,6 @@
 	<acme:form-double code="administrator.dashboard.form.label.avgApplicationsWorker" path="avgApplicationsWorker"/>
 	
 	
-	<!--d05-->
-	<acme:form-textarea code="administrator.dashboard.form.label.numberPendingApplications" path="numberPendingApplications"/>
-	<acme:form-textarea code="administrator.dashboard.form.label.numberAcceptedApplications" path="numberAcceptedApplications"/>
-	<acme:form-textarea code="administrator.dashboard.form.label.numberRejectedApplications" path="numberRejectedApplications"/>
 	<h2>
 		<acme:message code="administrator.dashboard.form.label.chart.company" />
 	</h2>
