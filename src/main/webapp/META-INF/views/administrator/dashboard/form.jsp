@@ -34,6 +34,11 @@
 	<acme:form-double code="administrator.dashboard.form.label.avgApplicationsEmployer" path="avgApplicationsEmployer"/>
 	<acme:form-double code="administrator.dashboard.form.label.avgApplicationsWorker" path="avgApplicationsWorker"/>
 	
+	
+	<!--d05-->
+	<acme:form-textarea code="administrator.dashboard.form.label.numberPendingApplications" path="numberPendingApplications"/>
+	<acme:form-textarea code="administrator.dashboard.form.label.numberAcceptedApplications" path="numberAcceptedApplications"/>
+	<acme:form-textarea code="administrator.dashboard.form.label.numberRejectedApplications" path="numberRejectedApplications"/>
 	<h2>
 		<acme:message code="administrator.dashboard.form.label.chart.company" />
 	</h2>
@@ -232,6 +237,78 @@
 			});
 		});
 	</script>
+	
+	
+	
+	<h2>
+		<acme:message code="administrator.dashboard.form.label.status" />
+	</h2>
+	
+	<div>
+		<canvas id="canvas5"></canvas>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var data = {
+					labels : [
+						
+						"PENDING",
+				    	"ACCEPTED",
+				    	"REJECTED"
+					],
+					datasets : [
+						{
+							data : [
+								
+							<jstl:forEach var="pending" items="${numberPendingApplications}">
+				   		  			<jstl:out value="${pending}"/>,
+				   			</jstl:forEach>
+							
+				
+							]
+						},{
+					    	
+					      	data: [ 
+					        	<jstl:forEach var="accepted" items="${numberAcceptedApplications}">
+						    		<jstl:out value="${accepted}"/>,
+								</jstl:forEach>
+					        ]
+					     }, {
+							data: [ 
+								<jstl:forEach var="rejected" items="${numberRejectedApplications}">
+					    			<jstl:out value="${rejected}"/>,
+								</jstl:forEach>
+							]
+						}
+					    ]
+					};
+
+			var options = {
+					legend : {
+						display : false
+					},
+					scales : {
+						yAxes:[{
+							ticks:{
+								suggestedMin:0.0,
+								suggestedMax:100.0
+							}
+						}]
+					}
+			};
+			var canvas, context;
+			
+			canvas = document.getElementById("canvas5");
+			context = canvas.getContext("2d");
+			new Chart(context, {
+				type : "line",
+				data : data,
+				options : options
+			});
+		});
+	</script>
+	
 	
 	
 	<acme:form-return code="administrator.dashboard.form.button.return"/>

@@ -33,7 +33,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "totalAnnouncement", "totalCompanyRecord", "totalInvestorRecords", "minRewardsRequest", "maxRewardsRequest", "avgRewardsRequest", "stdRewardsRequest", "minRewardsOffer", "maxRewardsOffer", "avgRewardsOffer",
-			"stdRewardsOffer", "avgJobsEmployer", "avgApplicationsEmployer", "avgApplicationsWorker", "ratioJobsByStatus", "ratioApplicationsByStatus", "sectorNumberCompanyRecord", "sectorNumberInvestorRecord");
+			"stdRewardsOffer", "avgJobsEmployer", "avgApplicationsEmployer", "avgApplicationsWorker", "ratioJobsByStatus", "ratioApplicationsByStatus", "sectorNumberCompanyRecord", "sectorNumberInvestorRecord", "numberPendingApplications",
+			"numberAcceptedApplications", "numberRejectedApplications");
 	}
 
 	@Override
@@ -65,6 +66,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		result.setRatioJobsByStatus(this.repository.getRatioJobsByStatus());
 		result.setRatioApplicationsByStatus(this.repository.getRatioApplicationsByStatus());
+
+		//NUEVO
+		result.setNumberPendingApplications(this.repository.getStatusPending());
+		result.setNumberAcceptedApplications(this.repository.getStatusAccepted());
+		result.setNumberRejectedApplications(this.repository.getStatusRejected());
 
 		return result;
 	}
