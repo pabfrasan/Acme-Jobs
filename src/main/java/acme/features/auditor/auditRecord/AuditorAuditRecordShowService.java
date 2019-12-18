@@ -8,7 +8,6 @@ import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -23,20 +22,21 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
 
-		boolean result;
-		int auditRecordId;
-
-		Principal principal;
-		Auditor auditor;
-		AuditRecord auditRecord;
-
-		auditRecordId = request.getModel().getInteger("id");
-		auditRecord = this.repository.findOneAuditRecordById(auditRecordId);
-		auditor = auditRecord.getAuditor();
-		principal = request.getPrincipal();
-		result = auditor.getUserAccount().getId() == principal.getAccountId();
-
-		return result;
+		//		boolean result;
+		//		int auditRecordId;
+		//
+		//		Principal principal;
+		//		Auditor auditor;
+		//		AuditRecord auditRecord;
+		//
+		//		auditRecordId = request.getModel().getInteger("id");
+		//		auditRecord = this.repository.findOneAuditRecordById(auditRecordId);
+		//		auditor = auditRecord.getAuditor();
+		//		principal = request.getPrincipal();
+		//		result = auditor.getUserAccount().getId() == principal.getAccountId();
+		//
+		//		return result;
+		return true;
 	}
 
 	@Override

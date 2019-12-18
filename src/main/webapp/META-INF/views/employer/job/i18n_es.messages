@@ -42,3 +42,4 @@ employer.job.error.status.sum100 = El trabajo no puede estar en su fase final si
 employer.job.error.status.spamEn = Uno de los deberes posee unas palabras en inglés que no estan permitidas
 employer.job.error.status.spamEs = Uno de los deberes posee unas palabras en español que no estan permitidas
 employer.job.error.status.noDescriptor = No hayningun descriptor asignado. Debe crear uno nuevo
+employer.job.form.error.duplicate = Esta referencia ya existe

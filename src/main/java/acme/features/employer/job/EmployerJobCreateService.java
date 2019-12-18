@@ -87,6 +87,13 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 		Date hoy = new Date();
 
+		Job existing;
+
+		if (!errors.hasErrors("reference")) {
+			existing = this.repository.findOneReference(entity.getReference());
+			errors.state(request, existing == null, "reference", "employer.job.form.error.duplicate");
+		}
+
 		if (!errors.hasErrors("deadline")) {
 			boolean esFuturo = false;
 			if (entity.getDeadline() != null) {

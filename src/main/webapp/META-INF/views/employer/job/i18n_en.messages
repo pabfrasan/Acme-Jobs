@@ -42,3 +42,4 @@ employer.job.error.status.sum100 = The job can't be in final mode if the duties 
 employer.job.error.status.spamEn = One of the duties have words in english that aren't permitted
 employer.job.error.status.spamEs = One of the duties have words in spanish that aren't permitted
 employer.job.error.status.noDescriptor = There is no descriptor. You must create one
+employer.job.form.error.duplicate = This reference already exist
