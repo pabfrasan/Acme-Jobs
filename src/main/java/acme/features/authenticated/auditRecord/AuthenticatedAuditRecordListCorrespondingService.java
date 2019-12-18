@@ -46,7 +46,7 @@ public class AuthenticatedAuditRecordListCorrespondingService implements Abstrac
 		Integer id;
 
 		id = new Integer(request.getServletRequest().getParameter("id"));
-		result = this.repository.findManyCorrespondingByJobId(id);
+		result = this.repository.findManyCorrespondingPublishedByJobId(id);
 
 		return result;
 	}

@@ -6,13 +6,14 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Auditor;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuditorAuditRecordShowService implements AbstractShowService<Auditor, AuditRecord> {
-	// Internal state ---------------------------------------------------------
+public class AuditorAuditRecordUpdateService implements AbstractUpdateService<Auditor, AuditRecord> {
+	// Internal state ---------------------------
 
 	@Autowired
 	AuditorAuditRecordRepository repository;
@@ -22,21 +23,16 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
 
-		//		boolean result;
-		//		int auditRecordId;
-		//
-		//		Principal principal;
-		//		Auditor auditor;
-		//		AuditRecord auditRecord;
-		//
-		//		auditRecordId = request.getModel().getInteger("id");
-		//		auditRecord = this.repository.findOneAuditRecordById(auditRecordId);
-		//		auditor = auditRecord.getAuditor();
-		//		principal = request.getPrincipal();
-		//		result = auditor.getUserAccount().getId() == principal.getAccountId();
-		//
-		//		return result;
 		return true;
+	}
+
+	@Override
+	public void bind(final Request<AuditRecord> request, final AuditRecord entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -49,15 +45,29 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 	}
 
 	@Override
+	public void validate(final Request<AuditRecord> request, final AuditRecord entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+	}
+
+	@Override
 	public AuditRecord findOne(final Request<AuditRecord> request) {
 		assert request != null;
-
 		AuditRecord result;
-		int id;
 
+		int id;
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneAuditRecordById(id);
 
 		return result;
 	}
+
+	@Override
+	public void update(final Request<AuditRecord> request, final AuditRecord entity) {
+		assert request != null;
+		assert entity != null;
+		this.repository.save(entity);
+	}
+
 }

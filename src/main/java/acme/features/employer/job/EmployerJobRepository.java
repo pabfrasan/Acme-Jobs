@@ -43,4 +43,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 
 	@Query("select j from Job j")
 	Collection<Job> findAllJobs();
+
+	@Query("Select j from Job j where j.reference= ?1")
+	Job findOneReference(String reference);
 }

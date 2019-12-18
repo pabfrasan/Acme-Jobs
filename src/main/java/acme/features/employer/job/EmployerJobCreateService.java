@@ -76,10 +76,23 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		Collection<Job> jobs = this.repository.findAllJobs();
+		List<Descriptor> usedDescriptors = jobs.stream().map(x -> x.getDescriptor()).collect(Collectors.toList());
+		descriptors.removeAll(usedDescriptors);
+		request.getModel().setAttribute("descriptors", descriptors);
+
 		String stringId = (String) request.getModel().getAttribute("idDescriptor");
 		errors.state(request, stringId != "null", "idDescriptor", "employer.job.error.status.noDescriptor");
 
 		Date hoy = new Date();
+
+		Job existing;
+
+		if (!errors.hasErrors("reference")) {
+			existing = this.repository.findOneReference(entity.getReference());
+			errors.state(request, existing == null, "reference", "employer.job.form.error.duplicate");
+		}
 
 		if (!errors.hasErrors("deadline")) {
 			boolean esFuturo = false;
