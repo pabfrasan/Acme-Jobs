@@ -39,9 +39,12 @@
 			<acme:menu-suboption code="master.menu.authenticated.offer.list" action="/authenticated/offer/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.request.list" action="/authenticated/request/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.job.list" action="/authenticated/job/list-active"/>
+
+			
 			<acme:menu-separator/>
 			
-			<acme:menu-suboption code="master.menu.authenticated,messageThread.list" action="/authenticated/message-thread/list-mine"/>
+			<acme:menu-suboption code="master.menu.authenticated.messageThread.list" action="/authenticated/message-thread/list-mine"/>
+			<acme:menu-suboption code="master.menu.authenticated.messageThread.create" action="/authenticated/message-thread/create"/>
 
 		</acme:menu-option>
 	
@@ -66,6 +69,11 @@
      		
      		<acme:menu-suboption code="master.menu.administrator.dashboard.show" action="/administrator/dashboard/show"/>
      		<acme:menu-suboption code="master.menu.administrator.customization-parameter" action="/administrator/customization-parameter/show"/>
+     		
+     		<acme:menu-separator/>
+     		<acme:menu-suboption code="master.menu.administrator.auditor-request.list" action="/administrator/auditor-request/list"/>
+			<acme:menu-separator/>
+     		
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
 
@@ -84,7 +92,7 @@
 		<%-- COSAS DE WORKER --%>
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
-			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list"/>
+			<acme:menu-suboption code="master.menu.worker.application.list" action="/worker/application/list-mine"/>
 		</acme:menu-option>
 		
 	  <%-- COSAS DE EMPLOYER --%>
@@ -92,6 +100,11 @@
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
 			<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list-mine"/>
 			<acme:menu-suboption code="master.menu.employer.application.list" action="/employer/application/list-mine"/>
+			<acme:menu-suboption code="master.menu.employer.job.create" action="/employer/job/create"/>
+			<acme:menu-suboption code="master.menu.employer.descriptor.create" action="/employer/descriptor/create"/>
+			<acme:menu-suboption code="master.menu.employer.duty.create" action="/employer/duty/create"/>
+			<acme:menu-suboption code="master.menu.employer.application.list.order" action="/employer/application/list-order"/>
+
 		</acme:menu-option>
 		
 		<%-- COSAS DE AUDITOR --%>
@@ -122,10 +135,15 @@
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
+
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create" access="!hasRole('Worker')"/>
 			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update" access="hasRole('Worker')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-employer" action="/authenticated/employer/create" access="!hasRole('Employer')"/>
 			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update" access="hasRole('Employer')"/>
+		
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor-request/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor-request/update" access="hasRole('Auditor')"/>
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

@@ -8,16 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+#NON COMMERCIAL BANNER LIST
+administrator.non-commercial-banner.list.label.targetUrl = Url:
+administrator.non-commercial-banner.list.label.slogan = Eslogan
+
+#NON COMMERCIAL BANNER FORM
 administrator.non-commercial-banner.form.label.slogan = Eslogan: 
 administrator.non-commercial-banner.form.label.picture = Imagen: 
 administrator.non-commercial-banner.form.label.jingle = Jingle: 
 administrator.non-commercial-banner.form.label.targetUrl = Url: 
 
-
 administrator.non-commercial-banner.form.button.update = Actualizar
 administrator.non-commercial-banner.form.button.return = Volver
 administrator.non-commercial-banner.form.button.create = Crear
 administrator.non-commercial-banner.form.button.delete = Borrar
-
-administrator.non-commercial-banner.list.label.targetUrl = Url:
-administrator.non-commercial-banner.list.label.slogan = Eslogan

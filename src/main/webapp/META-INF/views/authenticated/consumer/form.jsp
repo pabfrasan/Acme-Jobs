@@ -19,7 +19,7 @@
 	<acme:form-textbox code="authenticated.consumer.consumer.form.label.company" path="company"/>
 	<acme:form-textbox code="authenticated.consumer.consumer.form.label.sector" path="sector"/>
 	
-	<acme:form-submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create"/>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/consumer/create/"/>
 	<acme:form-submit test="${command == 'update'}" code="authenticated.consumer.consumer.form.button.update" action="/authenticated/consumer/update"/>
 	<acme:form-return code="authenticated.consumer.consumer.form.button.return"/>
 </acme:form>

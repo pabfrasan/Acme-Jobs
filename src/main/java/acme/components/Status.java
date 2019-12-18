@@ -1,5 +1,5 @@
 
-package acme.entities.jobs;
+package acme.components;
 
 public enum Status {
 	DRAFT, PUBLISHED

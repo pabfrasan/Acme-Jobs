@@ -18,12 +18,19 @@
 <acme:form>
 	
 	<acme:form-textbox code="worker.application.form.label.reference" path="reference"/>
-	<acme:form-moment code="worker.application.form.label.moment" path="moment"/>
-	<acme:form-textbox code="worker.application.form.label.status" path="status"/>
+	<jstl:if test="${command != 'create' }">
+		<acme:form-moment code="worker.application.form.label.moment" path="moment"/>
+		<acme:form-textbox code="worker.application.form.label.status" path="status" placeholder="PENDING"/>
+	</jstl:if>
 	<acme:form-textarea code="worker.application.form.label.statement" path="statement"/>
 	<acme:form-textarea code="worker.application.form.label.skills" path="skills"/>
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications"/>
+	<jstl:if test="${command != 'create' }">
+		<acme:form-textarea code="worker.application.form.label.justification" path="justification" readonly="true"/>
+	</jstl:if>
+	
+	<acme:form-submit test="${command == 'create'}" code="worker.application.form.button.create" action="/worker/application/create?jobId=${jobId}"/>
 
 	<acme:form-return code="worker.application.form.button.return"/>
-	
+
 </acme:form>

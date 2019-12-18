@@ -48,7 +48,11 @@ master.menu.authenticated.investor-record.list = Lista de registros de inversore
 master.menu.authenticated.company-record.list = Lista de registros de la compañia
 master.menu.authenticated.job.list = Lista de trabajos
 
+
 master.menu.authenticated.messageThread.list = Mis conversaciones
+master.menu.authenticated.messageThread.create= Crear conversaciones
+master.menu.authenticated,messageThread.list = Mis conversaciones
+
 
 # master.menu.administrator ###################################################
 
@@ -68,6 +72,8 @@ master.menu.administrator.challenge.create = Crear desafio
 
 master.menu.administrator.dashboard.show = Mostrar tablon de datos
 master.menu.administrator.customization-parameter = Parametros de customizacion
+
+master.menu.administrator.auditor-request.list= Solicitud para ser un auditor
 
 # master.menu.provider ########################################################
 
@@ -90,6 +96,14 @@ master.menu.employer = Empleador
 master.menu.employer.job.list= Lista de trabajos
 master.menu.employer.application.list= Lista de solicitudes
 
+master.menu.employer.job.create = Crear un trabajo
+master.menu.employer.descriptor.create = Crear descriptor
+master.menu.employer.duty.create = Crear deber
+
+master.menu.employer.application.list.order = Lista de solicitudes en orden
+
+
+
 # master.menu.auditor ########################################################
 
 master.menu.auditor = Auditor
@@ -109,10 +123,14 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
 master.menu.user-account.worker = Datos del trabajador
 master.menu.user-account.become-worker = Hazte trabajador
 master.menu.user-account.employer = Datos del empleador
 master.menu.user-account.become-employer = Hazte empleador
+master.menu.user-account.become-auditor = Hazte auditor
+master.menu.user-account.auditor = Datos de auditor
+
 
 ﻿# master.footer ###############################################################
 

@@ -1,44 +1,44 @@
 
-package acme.features.administrator.commercialBanner;
+package acme.features.administrator.auditorRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.banners.CommercialBanner;
+import acme.entities.auditorRequests.AuditorRequest;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministartorCommercialBannerShowService implements AbstractShowService<Administrator, CommercialBanner> {
+public class AdministartorAuditorRequestShowService implements AbstractShowService<Administrator, AuditorRequest> {
 
 	@Autowired
-	AdministratorCommercialBannerRepository repository;
+	AdministratorAuditorRequestRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<CommercialBanner> request) {
+	public boolean authorise(final Request<AuditorRequest> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<CommercialBanner> request, final CommercialBanner entity, final Model model) {
+	public void unbind(final Request<AuditorRequest> request, final AuditorRequest entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "slogan", "picture", "targetUrl", "creditCard");
+		request.unbind(entity, model, "firm", "statement", "status");
 
 	}
 
 	@Override
-	public CommercialBanner findOne(final Request<CommercialBanner> request) {
+	public AuditorRequest findOne(final Request<AuditorRequest> request) {
 		assert request != null;
 
 		int id = request.getModel().getInteger("id");
-		CommercialBanner result;
+		AuditorRequest result;
 
 		result = this.repository.findById(id);
 		return result;
