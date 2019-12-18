@@ -18,7 +18,9 @@ authenticated.message-thread.list.label.moment = Moment
 authenticated.message-thread.form.label.title = Title
 authenticated.message-thread.form.label.moment = Moment
 
+authenticated.message-thread.form.button.createMessage = Send message
 authenticated.message-thread.form.button.seeMessages = See messages
+
 authenticated.message-thread.form.button.seeUsers = See users
 authenticated.message-thread.form.button.create = Create
 authenticated.message-thread.form.button.return = Return
@@ -28,7 +30,11 @@ authenticated.message-thread.list.label.add = Add
 
 authenticated.message-thread.list.label.user.remove = Remove User (username):
 authenticated.message-thread.list.label.remove = Remove
+authenticated.message-thread.form.button.return = Return
 
 messageThread.add.error = This user is already in message thread
 messageThread.error.notnull = This user does not exist
 messageThread.error.remove = This user does not exist in message thread
+
+
+

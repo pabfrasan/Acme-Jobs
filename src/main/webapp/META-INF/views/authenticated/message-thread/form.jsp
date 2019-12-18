@@ -17,6 +17,7 @@
 
 <acme:form readonly="${command != 'create'}">
 	<acme:form-textbox code="authenticated.message-thread.form.label.title" path="title"/>
+
 	<jstl:if test="${command != 'create' }">
 		<acme:form-moment code="authenticated.message-thread.form.label.moment"
 							 path="moment" readonly="true"/>
@@ -26,6 +27,12 @@
 	<acme:form-submit test="${command != 'create'}"  code="authenticated.message-thread.form.button.seeMessages" method="get" action="/authenticated/message/list-mine?threadId=${id}"/>
 	<acme:form-submit test="${command != 'create'}"  code="authenticated.message-thread.form.button.seeUsers" method="get" action="/authenticated/user-account/list-users?threadId=${id}"/>
 	<acme:form-submit test="${command == 'create'}" code="authenticated.message-thread.form.button.create" action="/authenticated/message-thread/create"/>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.message-thread.form.button.createMessage" method="get" action="/authenticated/message/create?threadId=${id}"/>
+
+
+
+	
+
 	<acme:form-return code="authenticated.message-thread.form.button.return"/>
 </acme:form>
 

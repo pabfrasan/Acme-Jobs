@@ -42,9 +42,8 @@ public class EmployerDescriptorShowService implements AbstractShowService<Employ
 		Descriptor result;
 		int id;
 
-		id = request.getModel().getInteger("id");
-
-		result = this.repository.findOnebyId(id);
+		id = new Integer(request.getServletRequest().getParameter("id"));
+		result = this.repository.findOnebyJobId(id);
 
 		return result;
 	}

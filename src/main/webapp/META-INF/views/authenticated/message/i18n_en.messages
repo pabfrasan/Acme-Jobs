@@ -17,9 +17,14 @@ authenticated.message.list.label.body = Body
 
 # FORM
 
-authenticated.message-thread.form.label.title = Title
-authenticated.message-thread.form.label.moment = Moment
+authenticated.message.form.label.title = Title
+authenticated.message.form.label.moment = Moment
 authenticated.message.form.label.tags = Tags
 authenticated.message.form.label.body = Body
 
+authenticated.message.form.label.accept = The message cannot be updated or deleted. Are you going to send this message?
+
+administrator.message.form.button.create = Send message
 authenticated.message-thread.form.button.return = Return
+
+authenticated.message.error.must-accept = You must accept before to send the message

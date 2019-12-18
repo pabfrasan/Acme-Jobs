@@ -16,11 +16,18 @@ employer.application.list.label.moment = Fecha de creacion
 employer.application.list.label.status = Estado
 
 #APPLICATION FORM
+
 employer.application.form.label.reference = Referencia
 employer.application.form.label.moment = Fecha de creacion
 employer.application.form.label.status = Estado
 employer.application.form.label.statement = Declaración
 employer.application.form.label.skills = Habilidades
 employer.application.form.label.qualifications = Calificaciones
+employer.application.form.label.justification = Justificación
 
 employer.application.form.button.return = Volver
+employer.application.form.button.update = Actualizar
+
+#APPLICATION ERRORS
+
+employer.application.error.justification.rejected = Una justificación es necesaria
