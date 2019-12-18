@@ -8,8 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.user-account.list.label.username = Apodo:
-
 authenticated.user-account.form.title.update = Actualización de cuenta
 
 authenticated.user-account.form.label.username = Apodo:
@@ -21,6 +19,5 @@ authenticated.user-account.form.label.email = E-mail:
  
 authenticated.user-account.form.button.update = Actualizar
 authenticated.user-account.form.button.return = Volver
-authenticated.user-account.form.delete = Borrar
 
 authenticated.user-account.form.error.confirmation-no-match = La confirmación de la contraseña no cuadra

@@ -39,6 +39,5 @@ employer.job.form.button.return = Return
 employer.job.error.status.esFinal = The job can't be in final mode
 employer.job.error.status.isEmpty = You can't delete a job that a worker have applied for
 employer.job.error.status.sum100 = The job can't be in final mode if the duties of his descriptor don't sum up to 100%
-employer.job.error.status.spamEn = One of the duties have words in english that aren't permitted
-employer.job.error.status.spamEs = One of the duties have words in spanish that aren't permitted
+employer.job.error.status.spam = One of the duties have words that aren't permitted
 employer.job.error.status.noDescriptor = There is no descriptor. You must create one

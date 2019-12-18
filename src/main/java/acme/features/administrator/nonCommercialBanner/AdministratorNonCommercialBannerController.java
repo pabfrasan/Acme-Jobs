@@ -21,7 +21,7 @@ public class AdministratorNonCommercialBannerController extends AbstractControll
 	private AdministratorNonCommercialBannerListService		listService;
 
 	@Autowired
-	private AdministartorNonCommercialBannerShowService		showService;
+	private AdministratorNonCommercialBannerShowService		showService;
 
 	@Autowired
 	private AdministratorNonCommercialBannerCreateService	createService;
