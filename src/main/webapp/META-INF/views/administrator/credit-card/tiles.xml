@@ -17,6 +17,10 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+
+	<definition name="administrator/credit-card/list" extends="master">
+		<put-attribute name="body" type="template" value="../administrator/credit-card/list.jsp" />
+	</definition>
 	
 	<definition name="administrator/credit-card/form" extends="master">
 		<put-attribute name="body" type="template" value="../administrator/credit-card/form.jsp" />

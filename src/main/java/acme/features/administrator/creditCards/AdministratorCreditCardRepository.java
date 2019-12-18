@@ -20,4 +20,7 @@ public interface AdministratorCreditCardRepository extends AbstractRepository {
 
 	@Query("select co.creditCard from CommercialBanner co where co.id = ?1")
 	CreditCard findByCommercialBannerId(int id);
+
+	@Query("select b.creditCard from CommercialBanner b where b.id = ?1")
+	Collection<CreditCard> findManyCorrespondingByBannerId(Integer jobId);
 }

@@ -17,7 +17,7 @@ sponsor.commercial-banner.form.label.slogan = Slogan:
 sponsor.commercial-banner.form.label.picture = Picture: 
 sponsor.commercial-banner.form.label.targetUrl = Url: 
 
-sponsor.credit-card.button.show = Credit card of this commercial banner
+sponsor.credit-card.button.list = Credit card of this commercial banner
 
 sponsor.commercial-banner.form.button.update = Update
 sponsor.commercial-banner.form.button.create = Create

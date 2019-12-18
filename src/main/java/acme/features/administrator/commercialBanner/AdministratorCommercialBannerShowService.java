@@ -30,7 +30,6 @@ public class AdministratorCommercialBannerShowService implements AbstractShowSer
 		assert model != null;
 
 		request.unbind(entity, model, "slogan", "picture", "targetUrl");
-
 	}
 
 	@Override
