@@ -37,8 +37,7 @@ public class Banner extends DomainEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@ManyToOne(optional = false)
 	@Valid
+	@ManyToOne(optional = true)
 	private Sponsor				sponsor;
 }

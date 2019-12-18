@@ -76,10 +76,23 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		Collection<Job> jobs = this.repository.findAllJobs();
+		List<Descriptor> usedDescriptors = jobs.stream().map(x -> x.getDescriptor()).collect(Collectors.toList());
+		descriptors.removeAll(usedDescriptors);
+		request.getModel().setAttribute("descriptors", descriptors);
+
 		String stringId = (String) request.getModel().getAttribute("idDescriptor");
 		errors.state(request, stringId != "null", "idDescriptor", "employer.job.error.status.noDescriptor");
 
 		Date hoy = new Date();
+
+		Job existing;
+
+		if (!errors.hasErrors("reference")) {
+			existing = this.repository.findOneReference(entity.getReference());
+			errors.state(request, existing == null, "reference", "employer.job.form.error.duplicate");
+		}
 
 		if (!errors.hasErrors("deadline")) {
 			boolean esFuturo = false;
@@ -90,7 +103,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		}
 
 		boolean esFinal = false;
-		if (entity.getDeadline() != null) {
+		if (entity.getStatus() != null) {
 			esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
 		}
 		if (esFinal) {
@@ -108,22 +121,24 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			String[] spamEn = custom.getSpamWordsEn().split(",");
 			String[] spamEs = custom.getSpamWordsEs().split(",");
 			for (Duty d : duties) {
-				long numSpamEn = 0;
-				long numSpamEs = 0;
+				long numSpam = 0;
 
 				for (String s : spamEn) {
 					if (d.getDescription().contains(s)) {
-						numSpamEn = numSpamEn + 1;
+						numSpam = numSpam + 1;
+					} else if (d.getTitle().contains(s)) {
+						numSpam = numSpam + 1;
 					}
 				}
-				errors.state(request, numSpamEn < custom.getThreshold(), "idDescriptor", "employer.job.error.status.spamEn");
 
 				for (String s : spamEs) {
 					if (d.getDescription().contains(s)) {
-						numSpamEs = numSpamEs + 1;
+						numSpam = numSpam + 1;
+					} else if (d.getTitle().contains(s)) {
+						numSpam = numSpam + 1;
 					}
 				}
-				errors.state(request, numSpamEs < custom.getThreshold(), "idDescriptor", "employer.job.error.status.spamEs");
+				errors.state(request, numSpam < custom.getThreshold(), "reference", "employer.job.error.reference.spam");
 			}
 		}
 	}

@@ -16,7 +16,7 @@ public interface AuditorJobRepository extends AbstractRepository {
 	@Query("select j from Job j where j.id = ?1")
 	Job findOneJobById(int id);
 
-	@Query("select a.job from AuditRecord a where a.auditor.id = ?1")
+	@Query("select distinct a.job from AuditRecord a where a.auditor.id = ?1")
 	Collection<Job> findManyWrittenByAuditorId(int auditorId);
 
 	@Query("select j from Job j")

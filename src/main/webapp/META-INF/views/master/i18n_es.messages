@@ -109,7 +109,10 @@ master.menu.auditor.job.list-not-written = Lista de trabajos que no poseen un re
 # master.menu.sponsor ########################################################
 
 master.menu.sponsor = Patrocinador
-master.menu.sponsor.banner.list = Mis anuncios publicitarios
+master.menu.sponsor.commercial-banner.list = Listar anuncios commeriales
+master.menu.sponsor.non-commercial-banner.list = Listar anuncios no commeriales
+master.menu.sponsor.commercial-banner.create = Crear anuncios commeriales
+master.menu.sponsor.non-commercial-banner.create = Crear anuncios no commeriales
 
 # master.menu.user-account ####################################################
 
@@ -127,6 +130,8 @@ master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.become-auditor = Hazte auditor
 master.menu.user-account.auditor = Datos de auditor
 
+master.menu.user-account.become-sponsor = Hazte patrocinador
+master.menu.user-account.sponsor = Datos de patrocinador
 
 ﻿# master.footer ###############################################################
 

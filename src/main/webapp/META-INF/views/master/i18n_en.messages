@@ -97,8 +97,6 @@ master.menu.employer.descriptor.create = Create descriptor
 master.menu.employer.duty.create = Create duty
 master.menu.employer.application.list.order = List applications in order
 
-
-
 # master.menu.auditor ########################################################
 
 master.menu.auditor = Auditor
@@ -108,7 +106,10 @@ master.menu.auditor.job.list-not-written = List of job that don´t have an audit
 # master.menu.sponsor ########################################################
 
 master.menu.sponsor = Sponsor
-master.menu.sponsor.banner.list = My banners
+master.menu.sponsor.commercial-banner.list = List commercial banners
+master.menu.sponsor.non-commercial-banner.list = List non commercial banners
+master.menu.sponsor.commercial-banner.create = Create commercial banners
+master.menu.sponsor.non-commercial-banner.create = Create non commercial banners
 
 # master.menu.user-account ####################################################
 
@@ -121,6 +122,9 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.user-account.become-auditor = Become an auditor
 master.menu.user-account.auditor = Auditor data
+
+master.menu.user-account.become-sponsor = Become a sponsor
+master.menu.user-account.sponsor = Sponsor data
 
 # master.footer ###############################################################
 
