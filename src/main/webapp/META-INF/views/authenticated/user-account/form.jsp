@@ -15,6 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+<jstl:if test="${command == 'update'}">
 <acme:form>
 	<acme:form-textbox code="authenticated.user-account.form.label.username" path="username" readonly="true"/>
 	<acme:form-password code="authenticated.user-account.form.label.password" path="password"/>
@@ -27,3 +28,12 @@
 	<acme:form-submit code="authenticated.user-account.form.button.update" action="/authenticated/user-account/update"/>
   	<acme:form-return code="authenticated.user-account.form.button.return"/>
 </acme:form>
+</jstl:if>
+
+<jstl:if test="${command == 'show'}">
+	<acme:form>
+	<acme:form-textbox code="authenticated.user-account.form.label.username" path="username" readonly="true"/>
+	
+	</acme:form>
+
+</jstl:if>

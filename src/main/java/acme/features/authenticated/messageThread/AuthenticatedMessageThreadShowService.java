@@ -45,6 +45,8 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
+		request.getServletRequest().getSession().setAttribute("threadId", request.getModel().getInteger("id"));
+
 		request.unbind(entity, model, "title", "moment", "messages");
 	}
 
