@@ -32,7 +32,7 @@
         `reference` varchar(255),
         `skills` varchar(255),
         `statement` varchar(255),
-        `status` integer,
+        `status` varchar(255),
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)
@@ -82,7 +82,7 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `target_url` varchar(255),
-        `sponsor_id` integer not null,
+        `sponsor_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -107,8 +107,8 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `target_url` varchar(255),
-        `sponsor_id` integer not null,
-        `credit_card_id` integer not null,
+        `sponsor_id` integer,
+        `credit_card_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -243,7 +243,7 @@
         `picture` varchar(255),
         `slogan` varchar(255),
         `target_url` varchar(255),
-        `sponsor_id` integer not null,
+        `sponsor_id` integer,
         `jingle` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;

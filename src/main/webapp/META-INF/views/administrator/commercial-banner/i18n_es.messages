@@ -8,16 +8,18 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+#COMMERCIAL BANNER LIST
+administrator.commercial-banner.list.label.targetUrl = Url:
+administrator.commercial-banner.list.label.slogan = Eslogan:
+
+#COMMERCIAL BANNER FORM
 administrator.commercial-banner.form.label.slogan = Eslogan: 
 administrator.commercial-banner.form.label.picture = Imagen: 
-administrator.commercial-banner.form.label.creditCard = Tarjeta de credito: 
 administrator.commercial-banner.form.label.targetUrl = Url: 
 
+administrator.credit-card.button.show = Tarjeta de crédito de este banner comercial
 
 administrator.commercial-banner.form.button.update = Actualizar
-administrator.commercial-banner.form.button.return = Volver
 administrator.commercial-banner.form.button.create = Crear
 administrator.commercial-banner.form.button.delete = Borrar
-
-administrator.commercial-banner.list.label.targetUrl = Url:
-administrator.commercial-banner.list.label.slogan = Eslogan
+administrator.commercial-banner.form.button.return = Volver

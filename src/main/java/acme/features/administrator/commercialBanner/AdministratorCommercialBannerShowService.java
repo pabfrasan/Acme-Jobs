@@ -11,7 +11,7 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministartorCommercialBannerShowService implements AbstractShowService<Administrator, CommercialBanner> {
+public class AdministratorCommercialBannerShowService implements AbstractShowService<Administrator, CommercialBanner> {
 
 	@Autowired
 	AdministratorCommercialBannerRepository repository;
@@ -29,7 +29,7 @@ public class AdministartorCommercialBannerShowService implements AbstractShowSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "slogan", "picture", "targetUrl", "creditCard");
+		request.unbind(entity, model, "slogan", "picture", "targetUrl");
 
 	}
 

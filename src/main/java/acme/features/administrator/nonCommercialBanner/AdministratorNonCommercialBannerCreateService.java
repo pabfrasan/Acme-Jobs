@@ -60,6 +60,8 @@ public class AdministratorNonCommercialBannerCreateService implements AbstractCr
 
 	@Override
 	public void create(final Request<NonCommercialBanner> request, final NonCommercialBanner entity) {
+		assert request != null;
+		assert entity != null;
 
 		this.repository.save(entity);
 
