@@ -76,6 +76,12 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
+		Collection<Descriptor> descriptors = this.repository.findAllDescriptors();
+		Collection<Job> jobs = this.repository.findAllJobs();
+		List<Descriptor> usedDescriptors = jobs.stream().map(x -> x.getDescriptor()).collect(Collectors.toList());
+		descriptors.removeAll(usedDescriptors);
+		request.getModel().setAttribute("descriptors", descriptors);
+
 		String stringId = (String) request.getModel().getAttribute("idDescriptor");
 		errors.state(request, stringId != "null", "idDescriptor", "employer.job.error.status.noDescriptor");
 
@@ -90,7 +96,7 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		}
 
 		boolean esFinal = false;
-		if (entity.getDeadline() != null) {
+		if (entity.getStatus() != null) {
 			esFinal = hoy.before(entity.getDeadline()) && entity.getStatus().equals(Status.PUBLISHED);
 		}
 		if (esFinal) {
