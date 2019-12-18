@@ -2,6 +2,7 @@
 package acme.features.administrator.dashboard;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -64,4 +65,8 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select 100*count(a)/(select count(p) from Application p),a.status from Application a group by a.status")
 	Collection<Object[]> getRatioApplicationsByStatus();
+
+	@Query("select count(a) from Application a where a.status=?1 and a.moment < ?2")
+	Integer getApplicationsByStatus(String status, Date moment);
+
 }

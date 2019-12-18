@@ -35,4 +35,11 @@ administrator.dashboard.form.label.chart.investor = Estado de los registros de l
 administrator.dashboard.form.label.chart.jobsByStatus = Ratio de trabajos por estado
 administrator.dashboard.form.label.chart.applicationsByStatus = Ratio de solicitudes por estado
 
+administrator.dashboard.form.label.numberPendingApplications= Solicitudes pendientes
+administrator.dashboard.form.label.numberAcceptedApplications= Solicitudes aceptadas
+administrator.dashboard.form.label.numberRejectedApplications= Solicitudes rechazadas
+administrator.dashboard.form.label.status= Lista de solicitudes por dia
+
+
+
 administrator.dashboard.form.button.return = Volver

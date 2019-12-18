@@ -34,6 +34,7 @@
 	<acme:form-double code="administrator.dashboard.form.label.avgApplicationsEmployer" path="avgApplicationsEmployer"/>
 	<acme:form-double code="administrator.dashboard.form.label.avgApplicationsWorker" path="avgApplicationsWorker"/>
 	
+	
 	<h2>
 		<acme:message code="administrator.dashboard.form.label.chart.company" />
 	</h2>
@@ -232,6 +233,85 @@
 			});
 		});
 	</script>
+	
+	
+	
+	<h2>
+		<acme:message code="administrator.dashboard.form.label.status" />
+	</h2>
+	
+	<div>
+		<canvas id="canvas5"></canvas>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var data = {
+					labels : ["28","27","26","25","24","23","22","21","20",
+						"19","18","17","16","15","14","13","12","11","10",
+						"9","8","7","6","5","4","3","2","1"
+						]
+					,datasets : [
+						{	
+							label : "Pending",
+							borderColor: "#ffff00",
+							fill : false,
+							data : [
+								
+							<jstl:forEach var="pending" items="${numberPendingApplications}">
+				   		  			"<jstl:out value="${pending}"/>",
+				   			</jstl:forEach>
+							
+				
+							]
+						},
+						{
+							label : "Accepted",
+							borderColor: "#00ff00",
+							fill : false,
+					      	data: [ 
+					        	<jstl:forEach var="accepted" items="${numberAcceptedApplications}">
+						    		"<jstl:out value="${accepted}"/>",
+								</jstl:forEach>
+					        ]
+					     }, 
+					     {
+					    	label : "Rejected",
+					    	borderColor: "#ff0000",
+					    	fill : false,
+							data: [ 
+								<jstl:forEach var="rejected" items="${numberRejectedApplications}">
+					    			"<jstl:out value="${rejected}"/>",
+								</jstl:forEach>
+							]
+						}
+					    ]
+					};
+
+			var options = {
+					legend : {
+						display : true
+					},
+					scales : {
+						yAxes:[{
+							ticks:{
+								suggestedMin:0.0,
+							}
+						}]
+					}
+			};
+			var canvas, context;
+			
+			canvas = document.getElementById("canvas5");
+			context = canvas.getContext("2d");
+			new Chart(context, {
+				type : "line",
+				data : data,
+				options : options
+			});
+		});
+	</script>
+	
 	
 	
 	<acme:form-return code="administrator.dashboard.form.button.return"/>

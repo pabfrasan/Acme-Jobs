@@ -35,4 +35,11 @@ administrator.dashboard.form.label.chart.investor = Investor Status
 administrator.dashboard.form.label.chart.jobsByStatus = Ratio of jobs grouped by status
 administrator.dashboard.form.label.chart.applicationsByStatus = Ratio of applications grouped by status
 
+
+
+administrator.dashboard.form.label.numberPendingApplications= Pending applications
+administrator.dashboard.form.label.numberAcceptedApplications= Accepted applications
+administrator.dashboard.form.label.numberRejectedApplications= Rejected applications
+administrator.dashboard.form.label.status= List applications per day
+
 administrator.dashboard.form.button.return = Return

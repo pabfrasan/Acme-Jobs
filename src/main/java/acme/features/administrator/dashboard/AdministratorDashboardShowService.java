@@ -1,6 +1,11 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +38,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null;
 
 		request.unbind(entity, model, "totalAnnouncement", "totalCompanyRecord", "totalInvestorRecords", "minRewardsRequest", "maxRewardsRequest", "avgRewardsRequest", "stdRewardsRequest", "minRewardsOffer", "maxRewardsOffer", "avgRewardsOffer",
-			"stdRewardsOffer", "avgJobsEmployer", "avgApplicationsEmployer", "avgApplicationsWorker", "ratioJobsByStatus", "ratioApplicationsByStatus", "sectorNumberCompanyRecord", "sectorNumberInvestorRecord");
+			"stdRewardsOffer", "avgJobsEmployer", "avgApplicationsEmployer", "avgApplicationsWorker", "ratioJobsByStatus", "ratioApplicationsByStatus", "sectorNumberCompanyRecord", "sectorNumberInvestorRecord", "numberPendingApplications",
+			"numberAcceptedApplications", "numberRejectedApplications");
 	}
 
 	@Override
@@ -41,6 +47,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 
 		Dashboard result = new Dashboard();
+
+		List<Integer> acc = new ArrayList<Integer>();
+		List<Integer> rej = new ArrayList<Integer>();
+		List<Integer> pen = new ArrayList<Integer>();
+
+		Date ahora = new Date();
 
 		result.setTotalAnnouncement(this.repository.getTotalAnnouncement());
 		result.setTotalCompanyRecord(this.repository.getTotalCompanyRecord());
@@ -65,6 +77,22 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		result.setRatioJobsByStatus(this.repository.getRatioJobsByStatus());
 		result.setRatioApplicationsByStatus(this.repository.getRatioApplicationsByStatus());
+
+		for (int i = 27; i >= 0; i--) {
+
+			Calendar anterior = Calendar.getInstance();
+			anterior.setTime(ahora);
+			anterior.add(Calendar.DAY_OF_MONTH, -i);
+
+			Integer appAcc = this.repository.getApplicationsByStatus("ACCEPTED", anterior.getTime());
+
+			acc.add(27 - i, appAcc);
+			rej.add(27 - i, this.repository.getApplicationsByStatus("REJECTED", anterior.getTime()));
+			pen.add(27 - i, this.repository.getApplicationsByStatus("PENDING", anterior.getTime()));
+		}
+		result.setNumberPendingApplications(pen);
+		result.setNumberAcceptedApplications(acc);
+		result.setNumberRejectedApplications(rej);
 
 		return result;
 	}
