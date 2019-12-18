@@ -22,4 +22,6 @@ auditor.auditRecord.form.label.status = Estado
 auditor.auditRecord.form.label.moment = Momento de creacion
 auditor.auditRecord.form.label.body = Cuerpo
 
+auditor.auditRecord.form.button.create = Crear
+auditor.auditRecord.form.button.update = Actualizar
 auditor.auditRecord.form.button.return = Volver
