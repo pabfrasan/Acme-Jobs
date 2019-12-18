@@ -53,12 +53,10 @@ public class AuditRecord extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Auditor				auditor;
 
-	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private Job					job;
